@@ -16,7 +16,7 @@ class CreateDataKaryawansTable extends Migration
         Schema::create('data__karyawans', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->string('jabatan');
+            $table->string('posisi');
             $table->string('foto');
             $table->timestamps();
         });

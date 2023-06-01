@@ -11,7 +11,7 @@ class Data_Karyawan extends Model
 
     protected $fillable = [
         'nama',
-        'jabatan',
+        'posisi',
         'foto',
     ];
 }

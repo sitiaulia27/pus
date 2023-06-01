@@ -12,7 +12,7 @@ class PeminjamController extends Controller
 
     public function index()
     {
-        $data = Peminjam::all();
+        $data = Peminjam::paginate(5);
         return view('peminjam.index', compact('data'));
     }
     /**
@@ -124,7 +124,7 @@ class PeminjamController extends Controller
             'status_id' => $request->status_id,
         ]);
 
-        notify()->success('Peminjam Berhasil Di Update');
+        notify()->success('Peminjam Berhasil Diubah');
         return redirect()->route('peminjam.index');
     }
 

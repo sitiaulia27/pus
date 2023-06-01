@@ -25,16 +25,6 @@ class PeminjamSeeder extends Seeder
                 'tanggal_pengembalian' => '2022-12-22 ',
                 'status_id' => 'dipinjam',
             ],
-            [
-                'nim' => '2003034',
-                'nama' => 'amel',
-                'kelas' => 'D3TI3B',
-                'jurusan_id' => 'teknik informatika',
-                'judul_buku' => 'jaringan komputer',
-                'tanggal_peminjaman' => '2022-12-12 ',
-                'tanggal_pengembalian' => '2022-12-22 ',
-                'status_id' => 'dipinjam',
-            ],
         ]);
     }
 }

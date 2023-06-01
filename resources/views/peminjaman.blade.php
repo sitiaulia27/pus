@@ -5,7 +5,7 @@
 <section id="portfolio" class="portfolio">
     <div class="container">
         <div class="row justify-content-center mt-4">
-            <div class="col-md-9">
+            <div class="col-md-8">
                 <div class="section-title">
                     <h2>Form Peminjaman</h2>
                 </div>
@@ -20,7 +20,7 @@
                             <label for="validationCustom01">Kelas</label>
                             <input type="text" class="form-control" id="validationCustom01" value="" required>
                         </div>
-                        <div class="col-md-8 mb-3">
+                        <div class="col-md-6 mb-3">
                             <label for="validationCustom02">Nama</label>
                             <input type="text" class="form-control" id="validationCustom02" value="" required>
                         </div>
@@ -34,13 +34,9 @@
                                 <option>Teknik Pendingin Dan Tata Udara</option>
                             </select>
                         </div>
-                        <div class="col-md-4 mb-3">
-                            <label for="validationCustom02">Nomor Telepon</label>
-                            <input type="text" class="form-control" id="validationCustom02" value="" required>
-                        </div>
-                        <div class="col-md-4 mb-3">
+                        <div class="col-md-6 mb-3">
                             <label for="validationCustom02">Judul Buku dan Pengarang</label>
-                            <textarea class="form-control"name="pesan" required></textarea>
+                            <input type="text" class="form-control" id="validationCustom02" value="" required>
                         </div>
 
                         <div class="col-md-4 mb-3">

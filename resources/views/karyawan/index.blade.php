@@ -18,7 +18,7 @@
                         <tr>
                         <th scope="col">No</th>
                         <th scope="col">Nama</th>
-                        <th scope="col">Jabatan</th>
+                        <th scope="col">Posisi</th>
                         <th scope="col">Foto</th>
                         <th scope="col">Action</th>
                         </tr>
@@ -28,7 +28,7 @@
                         <tr>
                         <th>{{ $loop->iteration }}</th>
                         <td>{{$row -> nama}}</td>
-                        <td>{{$row -> jabatan}}</td>
+                        <td>{{$row -> posisi}}</td>
                         <td><img src="{{asset('storage/'.$row->foto)}}" width="100"></td>
 
                         <td>
@@ -44,6 +44,7 @@
                         @endforeach
                     </tbody>
                 </table>
+                <!-- {{ $data -> links() }} -->
             </div>
         </div>
 </section>

@@ -15,8 +15,8 @@
                 @method('put')
                         @csrf
                         <div class="mb-3">
-                            <label for="jurusan" class="form-label">Jurusan</label>
-                            <input type="text" name="jabatan" class="form-control @error('jurusan') is-invalid @enderror" id="jurusan" required autofocus value="{{$edit->nama_jurusan }}">
+                            <label for="namajurusan" class="form-label">Jurusan</label>
+                            <input type="text" name="nama_jurusan" class="form-control @error('nama_jurusan') is-invalid @enderror" id="nama_jurusan" required autofocus value="{{ $edit->nama_jurusan }}">
                         </div>
 
                         <a class="btn btn-info" href="{{ route('jurusan.index') }}">Back</a>

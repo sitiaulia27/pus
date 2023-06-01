@@ -17,8 +17,8 @@
                             <input type="text" name="nama" class="form-control @error('nama') is-invalid @enderror" id="Nama" required autofocus value="{{old('nama') }}">
                         </div>
                         <div class="mb-3">
-                            <label for="jabatan" class="form-label">Jabatan</label>
-                            <input type="text" name="jabatan" class="form-control @error('nim') is-invalid @enderror" id="jabatan" required autofocus value="{{old('jabatan') }}">
+                            <label for="posisi" class="form-label">Posisi</label>
+                            <input type="text" name="posisi" class="form-control @error('posisi') is-invalid @enderror" id="posisi" required autofocus value="{{old('posisi') }}">
                         </div>
                         <div class="form-group">
                             <label for="foto" class="form-label">Foto</label>

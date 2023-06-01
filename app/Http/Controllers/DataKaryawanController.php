@@ -15,7 +15,7 @@ class DataKaryawanController extends Controller
      */
     public function index()
     {
-        $data = data_karyawan::all();
+        $data = data_karyawan::paginate(5);
         return view('karyawan.index', compact('data'));
     }
 
@@ -41,7 +41,7 @@ class DataKaryawanController extends Controller
         $validatedData = $request->validate([
 
             'nama' => 'required',
-            'jabatan' => 'required',
+            'posisi' => 'required',
             'foto' => 'required|mimes:jpg,png,jpeg|image',
         ]);
 
@@ -88,7 +88,7 @@ class DataKaryawanController extends Controller
     {
         $rules = [
             'nama' => 'required',
-            'jabatan' => 'required',
+            'posisi' => 'required',
         ];
 
         $validatedData = $request->validate($rules);
@@ -109,7 +109,7 @@ class DataKaryawanController extends Controller
 
         Data_Karyawan::where('id', $id)->update($validatedData);
 
-        notify()->success('Data Karyawan Berhasil Ditambahkan');
+        notify()->success('Data Karyawan Berhasil Diubah');
         return redirect()->route('karyawan.index');
     }
 

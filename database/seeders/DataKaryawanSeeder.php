@@ -16,7 +16,7 @@ class DataKaryawanSeeder extends Seeder
     {
         DB::table('data__karyawans')->insert([
             'nama' => 'Siti Aulia Fitriyanti',
-            'jabatan' => 'pustakawan',
+            'posisi' => 'pustakawan',
             'foto' => 'noimage.jpg',
 
         ]);

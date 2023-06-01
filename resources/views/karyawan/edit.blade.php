@@ -14,12 +14,12 @@
             <div class="col-md-5">
                 <div class="card-body">
                     <div class="form-group">
-                        <label for="name"><b>Nama</b></label>
-                        <input type="text" name="name" class="form-control @error('nim') is-invalid @enderror" id="nama" value="{{ $edit->nama }}">
+                        <label for="nama"><b>Nama</b></label>
+                        <input type="text" name="nama" class="form-control @error('nama') is-invalid @enderror" id="nama" value="{{ $edit->nama }}">
                     </div>
                     <div class="form-group">
-                        <label for="name"><b>Jabatan</b></label>
-                        <input type="text" name="jabatan" class="form-control @error('jabatan') is-invalid @enderror" id="jabatan" value="{{ $edit->jabatan }}">
+                        <label for="posisi"><b>Posisi</b></label>
+                        <input type="text" name="posisi" class="form-control @error('posisi') is-invalid @enderror" id="posisi" value="{{ $edit->posisi }}">
                     </div>
                     <div class="form-group">
                         <label for="foto" class="form-label">Foto</label>

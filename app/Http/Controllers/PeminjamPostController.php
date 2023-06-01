@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Jurusan;
 use Illuminate\Http\Request;
 
-class JurusanController extends Controller
+class PeminjamPostController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +13,7 @@ class JurusanController extends Controller
      */
     public function index()
     {
-        $data = Jurusan::paginate(5);
-        return view('jurusan.index', compact('data'));
+        //
     }
 
     /**
@@ -25,7 +23,7 @@ class JurusanController extends Controller
      */
     public function create()
     {
-        return view('jurusan.create');
+        //
     }
 
     /**
@@ -36,17 +34,7 @@ class JurusanController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-
-            'nama_jurusan' => 'required|unique:jurusans',
-        ]);
-
-        Jurusan::create([
-            'nama_jurusan' => $request->nama_jurusan,
-        ]);
-
-        notify()->success('Jurusan Berhasil Ditambahkan');
-        return redirect()->route('jurusan.index');
+        //
     }
 
     /**
@@ -68,8 +56,7 @@ class JurusanController extends Controller
      */
     public function edit($id)
     {
-        $edit = Jurusan::find($id);
-        return view('jurusan.edit', compact('edit'));
+        //
     }
 
     /**
@@ -81,16 +68,7 @@ class JurusanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'nama_jurusan' => 'required',
-        ]);
-
-        Jurusan::where('id', $id)->update([
-            'nama_jurusan' => $request->nama_jurusan,
-        ]);
-
-        notify()->success('Jurusan Berhasil Diubah');
-        return redirect()->route('jurusan.index');
+        //
     }
 
     /**
@@ -101,8 +79,6 @@ class JurusanController extends Controller
      */
     public function destroy($id)
     {
-        Jurusan::where("id", $id)->delete();
-        notify()->success('Berhasil Menghapus Data Jurusan');
-        return back();
+        //
     }
 }
