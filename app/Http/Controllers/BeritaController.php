@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Berita;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class BeritaController extends Controller
 {
@@ -36,21 +38,31 @@ class BeritaController extends Controller
      */
     public function store(Request $request)
     {
-
         $validatedData = $request->validate([
             'judul' => 'required|max:255',
-            'slug' => 'required|unique:beritas',
             'body' => 'required',
             'image' => 'required|mimes:jpg,png,jpeg|image',
         ]);
 
+        $berita = new Berita;
         if ($request->hasFile('image')) {
-            $validatedData['image'] = $request->file('foto')->store('post-berita');
+            $file = $request->file('image');
+            $filename = $file->getClientOriginalName();
+            $extension = $file->getClientOriginalExtension();
+            $filenameToStore = $filename . '_' . time() . '.' . $extension;
+
+            $file->move(public_path('images/posts-berita'), $filenameToStore);
+
+            $berita->image = $filenameToStore;
         }
 
-        Berita::create($validatedData);
+        $berita->judul = $validatedData['judul'];
+        $berita->slug = Str::slug($validatedData['judul'], '-');
+        $berita->body = $validatedData['body'];
 
-        notify()->success('Berita Berhasil Di Tambahkan');
+        $berita->save();
+
+        notify()->success('Berita Berhasil Ditambahkan');
         return redirect()->route('berita.index');
     }
 
@@ -62,7 +74,8 @@ class BeritaController extends Controller
      */
     public function show($id)
     {
-        //
+        $berita = Berita::findOrFail($id);
+        return view('berita.show', compact('berita'));
     }
 
     /**
@@ -86,19 +99,29 @@ class BeritaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $validatedData = $request->validate([
-            'judul' => 'required|max:255',
-            'slug' => 'required',
+        $rules = [
+            'judul' => 'required',
             'body' => 'required',
-            'image' => 'required|mimes:jpg,png,jpeg|image',
-        ]);
+        ];
 
-        Berita::where('id', $id)->update([
-            'judul' => $request->judul,
-            'slug' => $request->slug,
-            'body' => $request->body,
-            'image' => $request->image,
-        ]);
+        $validatedData = $request->validate($rules);
+
+        $berita = Berita::findOrFail($id);
+
+        if ($request->hasFile('image')) {
+            if ($berita->image) {
+                Storage::delete($berita->image);
+            }
+
+            $validatedData['image'] = $request->file('image')->store('images/posts-berita');
+            $berita->image = $validatedData['image'];
+        }
+
+        $berita->judul = $validatedData['judul'];
+        $berita->slug = Str::slug($validatedData['judul'], '-');
+        $berita->body = $validatedData['body'];
+
+        $berita->save();
 
         notify()->success('Berita Berhasil Di Update');
         return redirect()->route('berita.index');
@@ -117,10 +140,4 @@ class BeritaController extends Controller
         notify()->success('Berita Berhasil Di Hapus');
         return back();
     }
-
-    // public function checkSlug(Request $request)
-    // {
-    //     $slug = SlugService::createSlug(Berita::class, 'slug', $request->judul);
-    //     return response()->json(['slug' => $slug]);
-    // }
 }

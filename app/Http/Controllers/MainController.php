@@ -34,4 +34,9 @@ class MainController extends Controller
         return view('admin.index');
     }
 
+    public function tatatertib()
+    {
+        return view('tatatertib');
+    }
+
 }

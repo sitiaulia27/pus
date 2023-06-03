@@ -14,8 +14,6 @@
         <div class="container">
             <div class="carousel-caption text-start">
                 <h1>Ruang Referensi</h1>
-                <!-- <p>Some representative placeholder content for the first slide of the carousel.</p>
-                <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p> -->
             </div>
         </div>
     </div>
@@ -25,8 +23,6 @@
         <div class="container">
             <div class="carousel-caption">
                 <h1>Ruang Sirkulasi</h1>
-                <!-- <p>Some representative placeholder content for the second slide of the carousel.</p>
-                <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p> -->
             </div>
         </div>
     </div>
@@ -36,8 +32,6 @@
         <div class="container">
             <div class="carousel-caption text-end">
                 <h1>Meja Baca</h1>
-                <!-- <p>Some representative placeholder content for the third slide of this carousel.</p>
-                <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p> -->
             </div>
         </div>
     </div>
@@ -55,7 +49,6 @@
 <section id="koleksi" class="Koleksi">
     <div class="container">
         <div class="section-title">
-            <h2>Berita</h2>
             <div class="container marketing">
                 <!-- Three columns of text below the carousel -->
                 <div class="row">
@@ -70,14 +63,4 @@
         </div>
     </div>
 </section>
-
-
-
-
 @endsection
-@push('jsfooter')
-<script type="text/javascript">
-    $('.carousel').carousel({
-  interval: 2000
-})
-</script>

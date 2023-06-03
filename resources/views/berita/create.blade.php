@@ -21,7 +21,7 @@
                             </div>
                             @enderror
                         </div>
-                        <div class="mb-3">
+                        <!-- <div class="mb-3">
                             <label for="slug" class="form-label">Slug</label>
                             <input type="slug" name="slug" class="form-control @error('slug') is-invalid @enderror" id="slug" required value="{{ old('slug') }}">
                             @error('slug')
@@ -29,35 +29,25 @@
                                 {{ $message }}
                             </div>
                             @enderror
-                        </div>
+                        </div> -->
 
                         <div class="form-group">
                             <label for="image" class="form-label">Image</label>
                             <img class="img-preview img-fluid mb-3 col-sm-3">
-                            <input type="file" id="foto" name="foto" class="form-control @error('image') is-invalid @enderror" value="{{ old('foto', '') }}" placeholder="Upload gambar" onchange="previewImage()">
+                            <input type="file" id="image" name="image" class="form-control @error('image') is-invalid @enderror" value="{{ old('image', '') }}" placeholder="Upload gambar" onchange="previewImage()">
                         @error('image')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-6">
-                        <label for="body" class="form-label">Body</label>
-                        @error('body')
-                            <p class="text-danger">{{ $message }}</p>
-                        @enderror
-                            <textarea class="summernote" id="summernote"></textarea>
                         </div>
-                    </div>
 
-                        <!-- <div class="mb-3">
+                        <div class="mb-3">
                             <label for="body" class="form-label">Body</label>
                             @error('body')
                             <p class="text-danger">{{ $message }}</p>
                             @enderror
                             <input id="body" type="hidden" name="body">
                             <trix-editor input="body"></trix-editor>
-                        </div> -->
+                        </div>
 
 
                         <a class="btn btn-info" href="{{ route('berita.index') }}">Back</a>
@@ -77,7 +67,7 @@
     })
 </script>
 
-<script>
+<!-- <script>
     function previewImage(){
     const image = document.querySelector('#foto');
     const imgPreview = document.querySelector('.img-preview');
@@ -91,6 +81,6 @@
         imgPreview.src = oFREvent.target.result;
     }
 }
-</script>
+</script> -->
 
 @endsection

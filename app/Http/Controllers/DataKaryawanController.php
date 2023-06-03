@@ -93,12 +93,6 @@ class DataKaryawanController extends Controller
 
         $validatedData = $request->validate($rules);
 
-        // if ($request->file('foto')) {
-        //     $rules['foto'] = 'required|mimes:jpg,png,jpeg|image';
-        // }
-
-        // $validatedData = $request->validate($rules);
-
         if ($request->file('foto')) {
             if ($request->oldImage) {
                 Storage::delete($request->oldImage);

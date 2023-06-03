@@ -4,20 +4,21 @@
     <div class="container d-flex align-items-center justify-content-between">
 
     <a href="" class="logo"><img src="{{ asset('img/polindra.png')}}" alt="" class="img-fluid"></a>
-    <h1 class="logo">UPT PERPUSTAKAAN</a></h1>
+    <h4 class="logo">UPT PERPUSTAKAAN POLINDRA</a></h4>
 
 
-      <nav id="navbar" class="navbar">
+    <nav id="navbar" class="navbar">
         <ul>
             <li><a class="nav-link {{ setActive('layouts.index') }}" href="{{ route('layouts.index') }}">Home</a></li>
             <li><a class="nav-link {{ setActive('profil') }}" href="{{ route('profil') }}">Profil</a></li>
-            <!-- <li><a class="nav-link" href="">Aktivitas</a></li> -->
+            <li><a class="nav-link" href="">Aktivitas</a></li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Pelayanan
                 </a>
                     <ul>
                     <li><a class="nav-link {{ setActive('peminjaman') }}" href="{{ route('peminjaman') }}">Form Peminjaman Buku</a></li>
+                    <li><a class="nav-link {{ setActive('tatatertib') }}" href="{{ route('tatatertib') }}">Tata Tertib</a></li>
                     <li><a class="nav-link" href="#">Layanan Sirkulasi</a></li>
                     <li><a class="nav-link" href="#">Layanan Referensi</a></li>
                     <li><a class="nav-link" href="#">Peminjaman Dan Pengembalian Buku</a></li>

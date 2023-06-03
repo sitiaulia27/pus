@@ -28,6 +28,7 @@ route::get('/peminjamanan', [App\Http\Controllers\MainController::class, 'peminj
 route::get('/pengembalian', [App\Http\Controllers\MainController::class, 'pengembalian'])->name('pengembalian');
 ('peminjaman');
 route::get('/aktivitas', [App\Http\Controllers\MainController::class, 'aktivitas'])->name('aktivitas');
+route::get('/tatatertib', [App\Http\Controllers\MainController::class, 'tatatertib'])->name('tatatertib');
 
 //form login
 Auth::routes();
@@ -50,8 +51,8 @@ Route::group(['admin' => 'dashboard', 'middleware' => ['web', 'auth']], function
     Route::resource("peminjam", PeminjamController::class);
 
     //berita
-    // Route::get('berita/checkSlug', [BeritaController::class, 'checkSlug']);
     Route::resource("berita", BeritaController::class);
+    Route::get('/berita/{slug}', 'BeritaController@show')->name('berita.show');
 
     //jurusan
     Route::resource("jurusan", JurusanController::class);
