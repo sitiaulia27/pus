@@ -52,7 +52,6 @@ Route::group(['admin' => 'dashboard', 'middleware' => ['web', 'auth']], function
 
     //berita
     Route::resource("berita", BeritaController::class);
-    Route::get('/berita/{slug}', 'BeritaController@show')->name('berita.show');
 
     //jurusan
     Route::resource("jurusan", JurusanController::class);

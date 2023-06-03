@@ -140,4 +140,12 @@ class BeritaController extends Controller
         notify()->success('Berita Berhasil Di Hapus');
         return back();
     }
+
+    public function showContent()
+    {
+        $berita = Berita::all(); // Mengambil semua data berita dari model Berita
+
+        return view('layouts.content', compact('berita'));
+    }
+
 }
