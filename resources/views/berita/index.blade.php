@@ -37,15 +37,13 @@
                         </td>
                         <td><img src="{{asset('images/posts-berita/'.$row->image)}}" width="100"></td>
                         <td>
-
                         <a class="btn btn-info mr-2" href="{{ route('berita.show', $row->id) }}" role="button"><i class="fa fa-eye"></i></a>
-<a class="btn btn-warning mr-2" href="{{('/berita/'.$row->id.'/edit/')}}" role="button"><i class="fa fa-edit"></i></a>
-<form action ="{{ ('berita/'.$row->id) }}" method="POST" class="d-inline">
-    @method('DELETE')
-    @csrf
-    <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah yakin ingin menghapus data ini?')"><i class="fa fa-trash"></i></button>
-</form>
-
+                        <a class="btn btn-warning mr-2" href="{{('/berita/'.$row->id.'/edit/')}}" role="button"><i class="fa fa-edit"></i></a>
+                        <form action ="{{ ('berita/'.$row->id) }}" method="POST" class="d-inline">
+                            @method('DELETE')
+                            @csrf
+                            <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah yakin ingin menghapus data ini?')"><i class="fa fa-trash"></i></button>
+                        </form>
                         </td>
                         </tr>
                         @endforeach

@@ -119,4 +119,11 @@ class DataKaryawanController extends Controller
         notify()->success('Berhasil Menghapus Data Karyawan');
         return back();
     }
+
+    public function showTeam()
+    {
+        $tim = Data_Karyawan::all(); // Mengambil semua data tim dari model Tim
+        return view('layouts.index', compact('tim'));
+    }
+
 }

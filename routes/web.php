@@ -5,6 +5,7 @@ use App\Http\Controllers\DataKaryawanController;
 use App\Http\Controllers\JurusanController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\PeminjamController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
