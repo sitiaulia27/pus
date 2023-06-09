@@ -141,11 +141,4 @@ class BeritaController extends Controller
         return back();
     }
 
-    public function showContent()
-    {
-        $berita = Berita::all(); // Mengambil semua data berita dari model Berita
-
-        return view('layouts.content', compact('berita'));
-    }
-
 }

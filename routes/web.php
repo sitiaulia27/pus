@@ -5,6 +5,7 @@ use App\Http\Controllers\DataKaryawanController;
 use App\Http\Controllers\JurusanController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\PeminjamController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,11 +25,13 @@ use Illuminate\Support\Facades\Route;
 //user
 route::get('/', [App\Http\Controllers\MainController::class, 'index'])->name('layouts.index');
 route::get('/profil', [App\Http\Controllers\MainController::class, 'liat_profil'])->name('profil');
-route::get('/peminjamanan', [App\Http\Controllers\MainController::class, 'peminjaman'])->name('peminjaman');
-route::get('/pengembalian', [App\Http\Controllers\MainController::class, 'pengembalian'])->name('pengembalian');
-('peminjaman');
+route::get('/form', [App\Http\Controllers\MainController::class, 'form'])->name('form');
 route::get('/aktivitas', [App\Http\Controllers\MainController::class, 'aktivitas'])->name('aktivitas');
 route::get('/tatatertib', [App\Http\Controllers\MainController::class, 'tatatertib'])->name('tatatertib');
+route::get('/sirkuref', [App\Http\Controllers\MainController::class, 'sirkuref'])->name('sirkuref');
+route::get('/mulmedadmin', [App\Http\Controllers\MainController::class, 'mulmedadmin'])->name('mulmedadmin');
+route::get('/peminjaman', [App\Http\Controllers\MainController::class, 'peminjaman'])->name('peminjaman');
+// Route::get('/berita', [App\Http\Controllers\MainController::class, 'beritapost'])->name('berita');
 
 //form login
 Auth::routes();

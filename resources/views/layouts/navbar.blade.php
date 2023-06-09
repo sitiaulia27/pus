@@ -17,11 +17,11 @@
                     Pelayanan
                 </a>
                     <ul>
-                    <li><a class="nav-link {{ setActive('peminjaman') }}" href="{{ route('peminjaman') }}">Form Peminjaman Buku</a></li>
+                    <li><a class="nav-link {{ setActive('form') }}" href="{{ route('form') }}">Form Peminjaman Buku</a></li>
                     <li><a class="nav-link {{ setActive('tatatertib') }}" href="{{ route('tatatertib') }}">Tata Tertib</a></li>
-                    <li><a class="nav-link" href="#">Layanan Sirkulasi</a></li>
-                    <li><a class="nav-link" href="#">Layanan Referensi</a></li>
-                    <li><a class="nav-link" href="#">Peminjaman Dan Pengembalian Buku</a></li>
+                    <li><a class="nav-link {{ setActive('sirkuref') }}" href="{{ route('sirkuref') }}">Layanan Sirkulasi & Referensi</a></li>
+                    <li><a class="nav-link {{ setActive('mulmedadmin') }}" href="{{ route('mulmedadmin') }}">Layanan Mulimedia & Administrasi</a></li>
+                    <li><a class="nav-link {{ setActive('peminjaman') }}" href="{{ route('peminjaman') }}">Peminjaman & Pengembalian Buku</a></li>
                     </ul>
 
             </li>

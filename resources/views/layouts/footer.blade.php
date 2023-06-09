@@ -17,7 +17,7 @@
               <div class="email">
                 <i class="bi bi-envelope"></i>
                 <h4>Email:</h4>
-                <p></p>
+                <p>perpustakaan.polindra@gmail.com</p>
               </div>
 
               <div class="phone">
@@ -47,7 +47,7 @@
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Sosial Media</h4>
             <div class="social-links mt-3">
-            <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+            <a href="https://instagram.com/perpustakaanpolindra?igshid=MzRlODBiNWFlZA==" class="nav-link"><i class="bx bxl-instagram"></i></a>
             <a href="#" class="linkedin"><i class="bx bxl-youtube"></i></a>
           </div>
           </div>
@@ -58,7 +58,7 @@
 
     <div class="container py-4">
     <div class="copyright">
-        &copy; Copyright © 2023 POLINDRA - Jalan Raya Lohbener Lama No 8 lohbener Indramayu
+        &copy; Copyright © 2023 POLINDRA
       </div>
     </div>
   </footer><!-- End Footer -->

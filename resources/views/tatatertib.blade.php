@@ -13,7 +13,7 @@
                         </div>
                         <div class="timeline-panel">
                             <h3 class="title">SYARAT-SYARAT KEANGGOTAAN</h3>
-                            <ol class="description">
+                            <ol class="description text-justify">
                                 <li>Untuk memperoleh pelayanan dan memanfaatkan fasilitas diwajibkan menjadi anggota terlebih dahulu.</li>
                                 <li>Semua Sivitas Akademika Polindra secara otomatis menjadi anggota Perpustakaan</li>
                                 <li>Wajib mengisi formulir keanggotaan </li>
@@ -29,7 +29,7 @@
                         </div>
                         <div class="timeline-panel">
                             <h3 class="title">ATURAN & KETENTUAN PEMAKAI PERPUSTAKAAN</h3>
-                            <ol class="description">
+                            <ol class="description text-justify">
                                 <li>Wajib mengisi daftar hadir melalui aplikasi pada komputer yang disediakan.</li>
                                 <li>Tidak diperkenankan membawa tas, jaket, dan payung ke dalam ruangan perpustakaan, kecuali barang-barang berharga  seperti handphone (HP), dompet, dsb.</li>
                                 <li>Bagi Mahasiswa, Dosen, dan Karyawan yang ingin meminjam bahan pustaka harap membawa Kartu Anggota Perpustakaan.</li>
@@ -49,7 +49,7 @@
                         </div>
                         <div class="timeline-panel">
                             <h3 class="title">PERATURAN PEMINJAMAN</h3>
-                            <ol class="description">
+                            <ol class="description text-justify">
                                 <li>Peminjam harus mempunyai kartu anggota perpustakaan yang masih berlaku.</li>
                                 <li>Koleksi Terdiri dari Sirkulasi,Tandon,dan Referensi.</li>
                                 <li>Koleksi yang dapat dipinjam jenis koleksi Sirkulasi dan Tandon,sedangkan Referensi hanya dapat dibaca ditempat.</li>
@@ -68,7 +68,7 @@
                         </div>
                         <div class="timeline-panel">
                             <h3 class="title">SANKSI</h3>
-                            <ol class="description">
+                            <ol class="description text-justify">
                                 <li>Bila terlambat mengembalikan buku yang dipinjam, maka akan dikenakan denda sebesar Rp.1000,00/buku sirkulasi/hari.</li>
                                 <li>Buku yang hilang atau rusak karena kelalaian peminjam, wajib digantikan dengan buku yang sama.</li>
                                 <li>Pelanggaran terhadap peraturan perpustakaan dapat mengakibatkan status keanggotaannya dihilangkan sehingga tidak diperbolehkan lagi meminjam buku.</li>
@@ -81,7 +81,7 @@
                         </div>
                         <div class="timeline-panel">
                             <h3 class="title">SURAT BEBAS PERPUSTAKAAN</h3>
-                            <ol class="description">
+                            <ol class="description text-justify">
                                 Syarat-syarat mendapatkan Surat Bebas Perpustakaan adalah sebagai berikut:
                                 <li>Berlaku wajib untuk seluruh mahasiswa yang telah menyelesaikan studinya, mahasiswa yang pindah studi, dan mahasiswa yang mengundurkan diri.</li>
                                 <li>Memberikan sumbangan buku ke perpustakaan sebanyak 1 (dua) buah buku dengan ketentuan minimal terbitan 2 tahun terakhir dari tahun lulus.</li>
@@ -96,7 +96,7 @@
                         </div>
                         <div class="timeline-panel">
                             <h3 class="title">LAIN-LAIN</h3>
-                            <ol class="description">
+                            <ol class="description text-justify">
                                 <li>Setiap memakai buku Referensi untuk difotokopi, harus dicatatkan pada petugas dan meninggalkan kartu anggota.</li>
                                 <li>Hal-hal yang belum termuat dalam tata tertib ini akan ditentukan kemudian.</li>
                                 <li>Tata tertib ini berlaku mulai tanggal ditetapkannya.</li>

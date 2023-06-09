@@ -32,6 +32,41 @@ h6 {
   font-family: "Dosis", sans-serif;
 }
 
+@media (max-width: 576px) {
+  .carousel-inner {
+      height: auto;
+  }
+
+  .carousel-item {
+      display: none;
+  }
+}
+
+.team .card {
+  width: 13rem;
+  height: 100%;
+  margin: 10px;
+}
+
+.team .card .card-img-top {
+  object-fit: cover;
+  height: 238px;
+}
+
+/*--------------------------------------------------------------
+# card
+--------------------------------------------------------------*/
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  margin: 10px;
+}
+
+
+
 /*--------------------------------------------------------------
 # timeline
 --------------------------------------------------------------*/
