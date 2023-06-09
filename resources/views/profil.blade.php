@@ -39,11 +39,6 @@
     </div>
 </section>
 
-
-
-
-
-
 <div id="team" class="team section-bg">
     <div class="container">
         <div class="row pt-5">
@@ -73,6 +68,4 @@
         </div>
     </div>
 </div>
-
-
 @endsection

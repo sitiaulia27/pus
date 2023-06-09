@@ -44,12 +44,6 @@ class MainController extends Controller
         return view('tatatertib');
     }
 
-    // public function beritapost($id)
-    // {
-    //     $berita = Berita::findOrFail($id);
-    //     return view('berita', compact('berita'));
-    // }
-
     public function sirkuref()
     {
         return view('sirkuref');
@@ -59,4 +53,5 @@ class MainController extends Controller
     {
         return view('mulmedadmin');
     }
+
 }

@@ -46,7 +46,6 @@
     </button>
 </div>
 
-
 <section id="koleksi" class="Koleksi">
     <div class="container">
         <div class="card-container">
@@ -65,5 +64,4 @@
         </div>
     </div>
 </section>
-
 @endsection
