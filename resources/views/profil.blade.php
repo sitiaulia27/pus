@@ -1,7 +1,7 @@
 @extends('layouts.index')
 
 @section('content')
-<section class="tatatertib" id="tatatertib">
+<section class="profil" id="profil">
     <div class="container pt-5">
         <div class="text-center">
             <h2 class="section-heading text-uppercase"><b>VISI MISI</b></h2>

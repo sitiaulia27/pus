@@ -1,10 +1,10 @@
 <?php
 
+use App\Http\Controllers\AkreditasiController;
+use App\Http\Controllers\AktivitasController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\DataKaryawanController;
-use App\Http\Controllers\JurusanController;
 use App\Http\Controllers\MainController;
-use App\Http\Controllers\PeminjamController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -31,7 +31,10 @@ route::get('/tatatertib', [App\Http\Controllers\MainController::class, 'tatatert
 route::get('/sirkuref', [App\Http\Controllers\MainController::class, 'sirkuref'])->name('sirkuref');
 route::get('/mulmedadmin', [App\Http\Controllers\MainController::class, 'mulmedadmin'])->name('mulmedadmin');
 route::get('/peminjaman', [App\Http\Controllers\MainController::class, 'peminjaman'])->name('peminjaman');
-// Route::get('/berita', [App\Http\Controllers\MainController::class, 'beritapost'])->name('berita');
+route::get('/postberita', [App\Http\Controllers\MainController::class, 'postberita'])->name('postberita');
+
+//aktivitas
+route::get('/aktivitas', [App\Http\Controllers\AktivitasController::class, 'index'])->name('aktivitas');
 
 //form login
 Auth::routes();
@@ -46,18 +49,11 @@ route::get('/logout', function () {
 Route::group(['admin' => 'dashboard', 'middleware' => ['web', 'auth']], function () {
     route::get('/dashboard', [App\Http\Controllers\MainController::class, 'dashboard']);
     route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('admin.content');
-
     //karyawan
+    Route::get('karyawan/json', [DataKaryawanController::class, 'json'])->name('karyawan.index.json');
     Route::resource("karyawan", DataKaryawanController::class);
-
-    //peminjam
-    Route::resource("peminjam", PeminjamController::class);
-
     //berita
     Route::resource("berita", BeritaController::class);
-
-    //jurusan
-    Route::resource("jurusan", JurusanController::class);
+    //Akreditasi
+    Route::resource("akreditasi", AkreditasiController::class);
 });
-
-Route::get('/pesanberhasil', [\App\Http\Controllers\PeminjamController::class, 'pesan']);

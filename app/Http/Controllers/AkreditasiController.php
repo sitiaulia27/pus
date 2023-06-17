@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Akreditasi;
 use Illuminate\Http\Request;
 
-class PeminjamPostController extends Controller
+class AkreditasiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,8 @@ class PeminjamPostController extends Controller
      */
     public function index()
     {
-        //
+        $data = Akreditasi::all();
+        return view('akreditasi.index', compact('data'));
     }
 
     /**

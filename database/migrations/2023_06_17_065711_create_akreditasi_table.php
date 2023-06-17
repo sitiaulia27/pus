@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDataKaryawansTable extends Migration
+class CreateAkreditasiTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,9 @@ class CreateDataKaryawansTable extends Migration
      */
     public function up()
     {
-        Schema::create('data__karyawans', function (Blueprint $table) {
-            $table->id();
-            $table->string('nama');
-            $table->string('posisi');
-            $table->string('foto');
-            $table->softDeletes();
+        Schema::create('akreditasi', function (Blueprint $table) {
+            $table->id('komponen_id');
+            $table->string('nama_komponen');
             $table->timestamps();
         });
     }
@@ -30,6 +27,6 @@ class CreateDataKaryawansTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('data__karyawans');
+        Schema::dropIfExists('akreditasi');
     }
 }

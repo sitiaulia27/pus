@@ -29,11 +29,6 @@ class MainController extends Controller
         return view('peminjaman');
     }
 
-    public function aktivitas()
-    {
-        return view('aktivitas');
-    }
-
     public function dashboard()
     {
         return view('admin.index');
@@ -52,6 +47,12 @@ class MainController extends Controller
     public function mulmedadmin()
     {
         return view('mulmedadmin');
+    }
+
+    public function postberita()
+    {
+        $data = Berita::get();
+        return view('postberita', compact('data'));
     }
 
 }

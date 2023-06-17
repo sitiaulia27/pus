@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Data_Karyawan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Yajra\DataTables\DataTables;
 
 class DataKaryawanController extends Controller
 {
@@ -124,6 +125,21 @@ class DataKaryawanController extends Controller
     {
         $tim = Data_Karyawan::all(); // Mengambil semua data tim dari model Tim
         return view('layouts.index', compact('tim'));
+    }
+
+    public function json(Request $request)
+    {
+        $data = Data_Karyawan::orderBy('id', 'ASC')->get();
+        dd($data);
+        return DataTables::of($data)
+            ->addIndexColumn()
+        // ->addColumn('action', function ($row) {
+        //     return '<div class="buttons">
+        // <a href="" class="btn btn-primary btn-md"><i class="fa fa-edit"></i></a>
+        // </div>';
+        // })
+        // ->rawColumns(['action'])
+            ->make(true);
     }
 
 }

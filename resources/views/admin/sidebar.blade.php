@@ -15,19 +15,11 @@
             </li>
 
             <li class="dropdown">
-              <a class="nav-link {{ setActive('peminjam.index') }}" href="{{ route('peminjam.index') }}"><i class="fas fa-th-large"></i> <span>Data Peminjam</span></a>
-            </li>
-
-            <li class="dropdown">
               <a class="nav-link {{ setActive('berita.index') }}" href="{{ route('berita.index') }}"><i class="far fa-file-alt"></i> <span>Berita</span></a>
             </li>
 
             <li class="dropdown">
-              <a class="nav-link {{ setActive('jurusan.index') }}" href="{{ route('jurusan.index') }}"><i class="far fas fa-stream"></i> <span>Jurusan</span></a>
-            </li>
-
-            <li class="dropdown">
-              <a class="nav-link " href=""><i class="far fa-file"></i> <span>Akreditasi</span></a>
+              <a class="nav-link {{ setActive('akreditasi.index') }}" href="{{ route('akreditasi.index') }}"><i class="far fa-file"></i> <span>Akreditasi</span></a>
             </li>
 
             <li class="dropdown">

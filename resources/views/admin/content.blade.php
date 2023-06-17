@@ -15,9 +15,11 @@
                     </div>
                     <div class="card-wrap">
                         <div class="card-header">
-                            <h4>Data Peminjam</h4>
+                            <a href="{{ route('karyawan.index') }}">
+                            <h4><p id="Data Karyawan"></p></h4>
+                            </a>
                         </div>
-                        <div class="card-body">10</div>
+                        <div class="card-body"></div>
                     </div>
                 </div>
             </div>
@@ -48,4 +50,11 @@
                 </div>
             </div>
     </section>
+<script>
+    // Mengambil jumlah data karyawan
+    var jumlahDataKaryawan = 4; // Ganti dengan logika atau kode untuk mengambil jumlah data karyawan dari sumber data
+
+    // Menampilkan jumlah data karyawan dalam elemen dengan id "karyawan"
+    document.getElementById("Data Karyawan").innerText = "Data Karyawan " + jumlahDataKaryawan;
+</script>
 @endsection

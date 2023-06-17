@@ -58,7 +58,7 @@
 
     <div class="container py-4">
     <div class="copyright">
-        &copy; Copyright © 2023 POLINDRA
+    {{ trans('copyright') }} © {{ config('app.name') }} {{ date('Y') }}
       </div>
     </div>
   </footer><!-- End Footer -->

@@ -54,9 +54,15 @@
             <img src="{{asset('images/posts-berita/'.$row->image)}}" width="100" class="card-img-top" alt="Gambar">
                 <div class="card-body">
                     <h5 class="card-title">{{ $row->judul }}</h5>
-                    <p class="card-text">{{ $row->body }}</p>
+                    <p class="card-text">
+                        @if (strlen($row->body) > 50)
+                            {!! html_entity_decode(substr($row->body, 0, 50) . '...' )!!}
+                        @else
+                        {!! html_entity_decode($row->body) !!}
+                        @endif
+                    </p>
                         <div class="text-center">
-                            <a href="#" class="btn btn-primary">Selengkapnya</a>
+                            <a href="{{ route('postberita', $row->id) }}" class="btn btn-primary">Selengkapnya</a>
                         </div>
                 </div>
             </div>
