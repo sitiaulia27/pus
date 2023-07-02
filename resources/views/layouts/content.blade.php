@@ -9,8 +9,7 @@
     </div>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="{{ asset('img/ruang_referensi1.jpeg')}}" class="img-fluid">
-            <svg class="bd-placeholder-img" width="100%" height="100%" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+            <img src="{{ asset('img/ruang_referensi1.jpeg')}}" class="d-block w-100" alt="Ruang Referensi">
             <div class="container">
                 <div class="carousel-caption text-start">
                     <h1>Ruang Referensi</h1>
@@ -18,8 +17,7 @@
             </div>
         </div>
         <div class="carousel-item">
-            <img src="{{ asset('img/ruang_sirkulasi1.jpeg')}}" class="img-fluid">
-            <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+            <img src="{{ asset('img/ruang_sirkulasi1.jpeg')}}" class="d-block w-100" alt="Ruang Sirkulasi">
             <div class="container">
                 <div class="carousel-caption">
                     <h1>Ruang Sirkulasi</h1>
@@ -27,8 +25,7 @@
             </div>
         </div>
         <div class="carousel-item">
-            <img src="{{ asset('img/perpus1.jpg')}}" class="img-fluid">
-            <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+            <img src="{{ asset('img/perpus1.jpg')}}" class="d-block w-100" alt="Meja Baca">
             <div class="container">
                 <div class="carousel-caption text-end">
                     <h1>Meja Baca</h1>
@@ -46,12 +43,14 @@
     </button>
 </div>
 
+
+
 <section id="koleksi" class="Koleksi">
     <div class="container">
         <div class="card-container">
             @foreach ($data as $row)
             <div class="card" style="width: 18rem;">
-            <img src="{{asset('images/posts-berita/'.$row->image)}}" width="100" class="card-img-top" alt="Gambar">
+            <img src="{{ asset('storage/' . $row->image) }}" width="100" height="auto" class="card-img-top" alt="Gambar">
                 <div class="card-body">
                     <h5 class="card-title">{{ $row->judul }}</h5>
                     <p class="card-text">
@@ -62,7 +61,7 @@
                         @endif
                     </p>
                         <div class="text-center">
-                            <a href="{{ route('postberita', $row->id) }}" class="btn btn-primary">Selengkapnya</a>
+                            <a href="{{ route('postberita', $row->slug) }}" class="btn btn-primary">Selengkapnya</a>
                         </div>
                 </div>
             </div>

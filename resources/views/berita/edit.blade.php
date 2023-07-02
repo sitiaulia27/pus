@@ -24,30 +24,33 @@
                         </div>
 
                         <div class="form-group">
-                        <label for="foto" class="form-label">Image</label>
-                        <input type="hidden" name="oldImage" value="{{$edit->image}}">
-                        @if($edit->image)
-                            <img src="{{ asset('images/posts-berita/' . $edit->image)}}" class="img-preview img-fluid mb-3 col-sm-3 d-block">
-                        @else
-                            <img class="img-preview img-fluid mb-3 col-sm-3">
-                        @endif
-                            <input type="file" id="image" name="image" class="form-control @error('image') is-invalid @enderror" placeholder="Upload gambar" onchange="previewImage()">
-                        @error('image')
-                            <div class="invalid-feedback">{{ $message }}</div>
-                        @enderror
-                    </div>
+                            <label for="foto" class="form-label">Image</label>
+                            <input type="hidden" name="oldImage" value="{{$edit->image}}">
+                            @if($edit->image)
+                            <img src="{{ asset('storage/' . $edit->image) }}" class="img-preview img-fluid mb-3 col-sm-3 d-block">
+
+                            @else
+                                <img class="img-preview img-fluid mb-3 col-sm-3">
+                            @endif
+                                <input type="file" id="image" name="image" class="form-control @error('image') is-invalid @enderror" placeholder="Upload gambar" onchange="previewImage()">
+                            @error('image')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
 
                         <div class="mb-3">
                             <label for="body" class="form-label">Body</label>
                             @error('body')
                             <p class="text-danger">{{ $message }}</p>
                             @enderror
-                            <input id="body" type="hidden" name="body" value="{{ $edit->body }}">
-                            <trix-editor input="body"></trix-editor>
+                            <div class="col-sm-12 col-md-17">
+                                <textarea name="body" class="summernote">{{ $edit->body }}</textarea>
+                            </div>
                         </div>
 
 
-                        <a class="btn btn-info" href="{{ route('berita.index') }}">Back</a>
+
+                        <a class="btn btn-info" href="{{ route('berita.index') }}">Kembali</a>
                         <input type="submit" href="" value="Simpan" class="btn btn-success float-right">
 
                     </form>
@@ -57,10 +60,10 @@
 </section>
 
 <script>
-    $(document).ready(function() {
-        $("#summernote").summernote();
-        $('.dropdown-toggle').dropdown();
-    })
+$(document).ready(function() {
+    $('.summernote').summernote({
+    });
+});
 </script>
 
 <!-- <script>

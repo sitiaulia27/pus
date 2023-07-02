@@ -8,7 +8,7 @@
             <h1>Edit Data Karyawan</h1>
         </div>
         <div class="card">
-            <form action="{{ route('karyawan.update', $edit->id) }}" method="POST">
+            <form action="{{ route('karyawan.update', $edit->id) }}" method="POST" enctype="multipart/form-data">
                     @method('put')
                         @csrf
             <div class="col-md-5">
@@ -34,7 +34,7 @@
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                     </div>
-                    <a class="btn btn-info" href="{{ route('karyawan.index') }}">Back</a>
+                    <a class="btn btn-info" href="{{ route('karyawan.index') }}">Kembali</a>
                     <input type="submit" href="" value="Simpan" class="btn btn-success float-right">
             </div>
         </div>

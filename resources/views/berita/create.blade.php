@@ -21,16 +21,6 @@
                             </div>
                             @enderror
                         </div>
-                        <!-- <div class="mb-3">
-                            <label for="slug" class="form-label">Slug</label>
-                            <input type="slug" name="slug" class="form-control @error('slug') is-invalid @enderror" id="slug" required value="{{ old('slug') }}">
-                            @error('slug')
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
-                            @enderror
-                        </div> -->
-
                         <div class="form-group">
                             <label for="image" class="form-label">Image</label>
                             <img class="img-preview img-fluid mb-3 col-sm-3">
@@ -46,14 +36,16 @@
                             <p class="text-danger">{{ $message }}</p>
                             @enderror
                             <input id="body" type="hidden" name="body">
-                            <trix-editor input="body"></trix-editor>
+                            <div class="col-sm-12 col-md-17">
+                                <textarea id="body" name="body" class="summernote"></textarea>
+                            </div>
                         </div>
 
 
-                        <a class="btn btn-info" href="{{ route('berita.index') }}">Back</a>
-                        <input type="submit" href="" value="Simpan" class="btn btn-success float-right">
 
-                        <!-- <button type="submit" class="btn btn-primary">Tambah</button> -->
+
+                        <a class="btn btn-info" href="{{ route('berita.index') }}">Kembali</a>
+                        <input type="submit" href="" value="Simpan" class="btn btn-success float-right">
                     </form>
                 </div>
             </div>
@@ -62,9 +54,9 @@
 
 <script>
     $(document).ready(function() {
-        $("#summernote").summernote();
-        $('.dropdown-toggle').dropdown();
-    })
+    $('.summernote').summernote({
+    });
+});
 </script>
 
 <!-- <script>

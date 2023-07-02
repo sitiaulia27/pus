@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Berita;
+use App\Models\Data_Karyawan;
+
 class HomeController extends Controller
 {
     /**
@@ -21,6 +24,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('admin.content');
+        $data["count_data_karyawan"] = Data_Karyawan::count();
+        $data["count_berita"] = Berita::count();
+        return view('admin.content', $data);
     }
 }

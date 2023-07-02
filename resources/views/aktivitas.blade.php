@@ -30,12 +30,26 @@
 
 <center><div class="card" style="width: 25rem;">
     <div class="card-header">
-        <h5 class="card-title">Buku yang Sering Dipinjam</h5>
+        <h5 class="card-title">Buku yang Sering Dipinjam Bulan Ini</h5>
+        <a href="{{ route('StoreDataPeminjaman') }}" >Data Peminjaman</a>
     </div>
     <div class="card-body">
-        <p>Tidak ada data buku untuk bulan ini.</p>
         <ul class="list-group">
-            <li class="list-group-item"></li>
+            <li class="list-group-item">
+            @if (isset($peminjaman))
+                <ul class="list-group">
+                        <li class="list-group-item">
+                            {{ $peminjaman->book_name }}
+                        </li>
+                </ul>
+            @else
+                <p>Tidak ada data buku untuk bulan ini.</p>
+            @endif
+
+            @if (isset($errorMessage))
+                <p>{{ $errorMessage }}</p>
+            @endif
+            </li>
         </ul>
     </div>
 </div></center>

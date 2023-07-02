@@ -28,6 +28,14 @@
         <link href="{{ asset('butterfly/css/style.css') }}" rel="stylesheet">
 
 
+        <style>
+
+        .carousel-item img {
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+
 </head>
 
 <body>

@@ -17,7 +17,7 @@ class CreateDataKaryawansTable extends Migration
             $table->id();
             $table->string('nama');
             $table->string('posisi');
-            $table->string('foto');
+            $table->string('foto')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

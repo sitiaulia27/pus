@@ -32,6 +32,12 @@
         </div>
     </div>
 </div>
+
+</section>
+@endsection
+
+
+@push('page-scripts')
 <script>
             $(function() {
                 $('#table-1').dataTable({
@@ -64,5 +70,4 @@
                 })
             })
     </script>
-</section>
-@endsection
+@endpush

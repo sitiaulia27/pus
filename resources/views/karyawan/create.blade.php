@@ -29,7 +29,7 @@
                         @enderror
                     </div>
 
-                        <a class="btn btn-info" href="{{ route('karyawan.index') }}">Back</a>
+                        <a class="btn btn-info" href="{{ route('karyawan.index') }}">Kembali</a>
                         <input type="submit" href="" value="Simpan" class="btn btn-success float-right">
                     </form>
                 </div>

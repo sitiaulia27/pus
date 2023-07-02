@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use KomponenSeeder;
+use SubSubKomponenSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -15,8 +17,13 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         $this->call(UserSeeder::class);
-        $this->call(PeminjamSeeder::class);
         $this->call(DataKaryawanSeeder::class);
         $this->call(BeritaSeeder::class);
+        $this->call(KomponenSeeder::class);
+        $this->call(SubKomponenSeeder::class);
+        $this->call(SubSubKomponenSeeder::class);
+        $this->call(PertanyaanSeeder::class);
+        $this->call(SubPertanyaanSeeder::class);
+        $this->call(PilihanSeeder::class);
     }
 }

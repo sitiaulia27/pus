@@ -9,12 +9,10 @@
         <div class="card-body">
             <h5 class="card-title">{{ $berita->judul }}</h5>
             <p class="card-text">{!! html_entity_decode($berita->body) !!}</p>
-            <img src="{{ asset('images/posts-berita/'.$berita->image) }}" width="300" alt="Berita Image">
-        </div>
-        <div class="card-footer">
-            <a href="{{ route('berita.index') }}" class="btn btn-primary">Kembali</a>
+            <img src="{{ asset('storage/' . $berita->image) }}" width="300" alt="Berita Image">
         </div>
     </div>
+    <a href="{{ route('berita.index') }}" class="btn btn-primary">Kembali</a>
 </div>
 
 @endsection

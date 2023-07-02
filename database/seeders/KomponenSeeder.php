@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class AkreditasiSeeder extends Seeder
+class KomponenSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,7 +14,7 @@ class AkreditasiSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('akreditasi')->insert([
+        DB::table('komponens')->insert([
             [
                 'nama_komponen' => 'Koleksi Perpustakaan',
             ],

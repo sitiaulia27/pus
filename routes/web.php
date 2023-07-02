@@ -35,6 +35,7 @@ route::get('/postberita', [App\Http\Controllers\MainController::class, 'postberi
 
 //aktivitas
 route::get('/aktivitas', [App\Http\Controllers\AktivitasController::class, 'index'])->name('aktivitas');
+route::get('/storeDataPeminjaman', [App\Http\Controllers\AktivitasController::class, 'StoreDataPeminjaman'])->name('StoreDataPeminjaman');
 
 //form login
 Auth::routes();
@@ -53,7 +54,9 @@ Route::group(['admin' => 'dashboard', 'middleware' => ['web', 'auth']], function
     Route::get('karyawan/json', [DataKaryawanController::class, 'json'])->name('karyawan.index.json');
     Route::resource("karyawan", DataKaryawanController::class);
     //berita
+    Route::get('berita/json', [BeritaController::class, 'json'])->name('berita.index.json');
     Route::resource("berita", BeritaController::class);
     //Akreditasi
+    Route::get('akreditasi/json', [AkreditasiController::class, 'json'])->name('akreditasi.index.json');
     Route::resource("akreditasi", AkreditasiController::class);
 });

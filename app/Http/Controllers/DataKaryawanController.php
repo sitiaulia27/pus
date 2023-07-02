@@ -130,15 +130,25 @@ class DataKaryawanController extends Controller
     public function json(Request $request)
     {
         $data = Data_Karyawan::orderBy('id', 'ASC')->get();
-        dd($data);
+
         return DataTables::of($data)
             ->addIndexColumn()
-        // ->addColumn('action', function ($row) {
-        //     return '<div class="buttons">
-        // <a href="" class="btn btn-primary btn-md"><i class="fa fa-edit"></i></a>
-        // </div>';
-        // })
-        // ->rawColumns(['action'])
+            ->editColumn('foto', function ($data) {
+                return "<img src='/storage/$data->foto' />";
+            })
+            ->addColumn('action', function ($row) {
+                $editRoute = route('karyawan.edit', ['karyawan' => $row->id]);
+                $destroyRoute = route('karyawan.destroy', ['karyawan' => $row->id]);
+                return '<div class="buttons">
+            <a href="' . $editRoute . '" class="btn btn-primary btn-md"><i class="fa fa-edit"></i></a>
+            <form action="' . $destroyRoute . '" method="POST" style="display: inline-block;">
+                ' . csrf_field() . '
+                ' . method_field('DELETE') . '
+                <button class="btn btn-danger delete" type="submit" onclick="return confirm(\'Apakah Anda yakin ingin menghapus data ini?\')"><i class="fa fa-trash"></i></button>
+            </form>
+        </div>';
+            })
+            ->rawColumns(['foto', 'action'])
             ->make(true);
     }
 

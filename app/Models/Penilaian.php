@@ -2,10 +2,15 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Penilaian extends Model
 {
-    use HasFactory;
+    protected $table = 'penilaian';
+    protected $primaryKey = 'penilaian_id';
+
+    public function subSubKomponen()
+    {
+        return $this->belongsTo(SubSubKomponen::class, 'sub_sub_komponen_id', 'sub_sub_komponen_id');
+    }
 }

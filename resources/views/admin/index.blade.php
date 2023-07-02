@@ -9,6 +9,9 @@
   <!-- General CSS Files -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-bs4.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-bs4.min.js"></script>
+
 
   <!-- CSS Libraries -->
   <link rel="stylesheet" href="{{ asset('admin/modules/datatables/datatables.min.css') }}">
@@ -17,6 +20,9 @@
 
   <!-- CSS Libraries -->
   <link rel="stylesheet" href="{{ asset('admin/modules/summernote/summernote-bs4.css') }}">
+  <link rel="stylesheet" href="{{ asset('admin/modules/codemirror/lib/codemirror.css') }}">
+  <link rel="stylesheet" href="{{ asset('admin/modules/codemirror/theme/duotone-dark.css') }}">
+  <link rel="stylesheet" href="{{ asset('admin/modules/jquery-selectric/selectric.css') }}">
 
   <!-- Template CSS -->
   <link rel="stylesheet" href="{{ asset('admin/css/style.css') }}">
@@ -34,15 +40,6 @@
       gtag('config', 'UA-94034622-3');
     </script>
 
-    {{-- trix editors --}}
-    <link rel="stylesheet" type="text/css" href="{{ asset('trix/trix.css') }}">
-    <script type="text/javascript" src="{{ asset('trix/trix.js') }}" ></script>
-
-    <style>
-      trix-toolbar [data-trix-button-group="file-tools"] {
-        display: none;
-      }
-    </style>
 </head>
 
 <body>
@@ -95,9 +92,6 @@
   <script src="{{ asset('admin/modules/datatables/Select-1.2.4/js/dataTables.select.min.js') }}"></script>
   <script src="{{ asset('admin/modules/jquery-ui/jquery-ui.min.js') }}"></script>
 
-  <!-- Page Specific JS File -->
-  <script src="{{ asset('admin/js/page/modules-datatables.js') }}"></script>
-
 
   <!-- Template JS File -->
   <script src="{{ asset('admin/js/scripts.js') }}"></script>
@@ -105,6 +99,12 @@
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
 
-  <!-- @stack('page-scripts') -->
+  <script>
+    $(document).ready(function() {
+  $('#summernote').summernote();
+});
+  </script>
+
+  @stack('page-scripts')
 </body>
 </html>

@@ -6,6 +6,7 @@ use App\Models\Berita;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use Yajra\DataTables\DataTables;
 
 class BeritaController extends Controller
 {
@@ -46,14 +47,8 @@ class BeritaController extends Controller
 
         $berita = new Berita;
         if ($request->hasFile('image')) {
-            $file = $request->file('image');
-            $filename = $file->getClientOriginalName();
-            $extension = $file->getClientOriginalExtension();
-            $filenameToStore = $filename . '_' . time() . '.' . $extension;
-
-            $file->move(public_path('images/posts-berita'), $filenameToStore);
-
-            $berita->image = $filenameToStore;
+            $validatedData['image'] = $request->file('image')->store('posts-berita');
+            $berita->image = $validatedData['image'];
         }
 
         $berita->judul = $validatedData['judul'];
@@ -113,7 +108,7 @@ class BeritaController extends Controller
                 Storage::delete($berita->image);
             }
 
-            $validatedData['image'] = $request->file('image')->store('images/posts-berita');
+            $validatedData['image'] = $request->file('image')->store('public/images/posts-berita');
             $berita->image = $validatedData['image'];
         }
 
@@ -139,6 +134,37 @@ class BeritaController extends Controller
         Berita::where("id", $id)->delete();
         notify()->success('Berita Berhasil Di Hapus');
         return back();
+    }
+
+    public function json(Request $request)
+    {
+        $data = Berita::orderBy('id', 'ASC')->get();
+
+        return DataTables::of($data)
+            ->addIndexColumn()
+            ->editColumn('image', function ($data) {
+                return "<img src='/storage/$data->image' />";
+            })
+            ->editColumn('body', function ($row) {
+                return '<div class="body-content" style="overflow: auto; height: 200px;">' . $row->body . '</div>';
+            })
+            ->addColumn('action', function ($row) {
+                $editRoute = route('berita.edit', ['beritum' => $row->id]);
+                $destroyRoute = route('berita.destroy', ['beritum' => $row->id]);
+                $showRoute = route('berita.show', ['beritum' => $row->id]);
+                return '<div class="buttons">
+            <a href="' . $editRoute . '" class="btn btn-primary btn-md"><i class="fa fa-edit"></i></a>
+            <a href="' . $showRoute . '" class="btn btn-info mr-2"><i class="fa fa-eye"></i></a>
+            <form action="' . $destroyRoute . '" method="POST" style="display: inline-block;">
+                ' . csrf_field() . '
+                ' . method_field('DELETE') . '
+                <button class="btn btn-danger delete" type="submit" onclick="return confirm(\'Apakah Anda yakin ingin menghapus data ini?\')"><i class="fa fa-trash"></i></button>
+            </form>
+        </div>';
+            })
+            ->rawColumns(['image', 'body', 'action'])
+            ->make(true);
+
     }
 
 }
