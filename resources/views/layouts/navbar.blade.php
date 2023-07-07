@@ -3,8 +3,8 @@
 <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center justify-content-between">
 
-    <a href="" class="logo"><img src="{{ asset('img/polindra.png')}}" alt="" class="img-fluid"></a>
-    <h4 class="logo">UPT PERPUSTAKAAN POLINDRA</a></h4>
+    <a class="logo"><img src="{{ asset('img/polindra.png')}}" alt="" class="img-fluid"></a>
+    <h5 class="logo">UPT PERPUSTAKAAN POLINDRA</a></h5>
 
 
     <nav id="navbar" class="navbar">
@@ -20,8 +20,9 @@
                     <!-- <li><a class="nav-link {{ setActive('form') }}" href="{{ route('form') }}">Form Peminjaman Buku</a></li> -->
                     <li><a class="nav-link {{ setActive('tatatertib') }}" href="{{ route('tatatertib') }}">Tata Tertib</a></li>
                     <li><a class="nav-link {{ setActive('sirkuref') }}" href="{{ route('sirkuref') }}">Layanan Sirkulasi & Referensi</a></li>
-                    <li><a class="nav-link {{ setActive('mulmedadmin') }}" href="{{ route('mulmedadmin') }}">Layanan Mulimedia & Administrasi</a></li>
+                    <li><a class="nav-link {{ setActive('baca_admin') }}" href="{{ route('baca_admin') }}">Layanan Baca di Tempat & Administrasi</a></li>
                     <li><a class="nav-link {{ setActive('peminjaman') }}" href="{{ route('peminjaman') }}">Peminjaman & Pengembalian Buku</a></li>
+                    <li><a class="nav-link {{ setActive('layanan_lainnya') }}" href="{{ route('layanan_lainnya') }}">Layanan Lainnya</a></li>
                     </ul>
 
             </li>

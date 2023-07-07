@@ -1,7 +1,5 @@
 @extends ('admin.index')
 
-
-
 @section('content')
 <section class="section">
     <div class="section-header">
@@ -67,11 +65,11 @@
                                     <td></td>
                                     <td></td>
                                     <td>{{ $st->nama_sub_pertanyaan}}</td>
-                                    <td>
-                                        @foreach($pilihan as $pilih)
+                                    <td style="padding: 10px;">
+                                        @foreach($pilihanSub as $pilih)
                                         @if($pilih->sub_pertanyaan_id > 0 && $pilih->sub_pertanyaan_id != null && $pilih->sub_pertanyaan_id == $st->sub_pertanyaan_id)
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="<?='pilihan_' . $tanya->id_pertanyaan;?>" value="<?=$pilih->bobot?>" required> {{$pilih->nama_pilihan}}
+                                            <input class="form-check-input" type="radio" name="<?='pilihan_sub_' . $tanya->id_pertanyaan;?>" value="<?=$pilih->bobot?>" required> {{$pilih->nama_pilihan}}
                                         </div>
                                         @endif
                                         @endforeach
@@ -80,7 +78,7 @@
                                 @endif
                                 @endforeach
                                 @if($cek_subtanya <= 0) <!-- pilihan di pertanyaan -->
-                                    <td>
+                                    <td style="padding: 10px;">
                                         @foreach($pilihan as $pilih)
                                         @if($pilih->id_pertanyaan == $tanya->id_pertanyaan)
                                         <div class="form-check">
@@ -116,11 +114,11 @@
                                             <td></td>
                                             <td></td>
                                             <td>{{ $st->nama_sub_pertanyaan}}</td>
-                                            <td>
-                                                @foreach($pilihan as $pilih)
+                                            <td style="padding: 10px;">
+                                                @foreach($pilihanSub as $pilih)
                                                 @if($pilih->sub_pertanyaan_id > 0 && $pilih->sub_pertanyaan_id != null && $pilih->sub_pertanyaan_id == $st->sub_pertanyaan_id)
                                                 <div class="form-check">
-                                                    <input class="form-check-input mb-5" type="radio" name="<?='pilihan_' . $tanya->id_pertanyaan;?>" value="<?=$pilih->bobot?>" required> {{$pilih->nama_pilihan}}
+                                                    <input class="form-check-input" type="radio" name="<?='pilihan_sub_' . $tanya->id_pertanyaan;?>" value="<?=$pilih->bobot?>" required> {{$pilih->nama_pilihan}}
                                                 </div>
                                                 @endif
                                                 @endforeach
@@ -129,11 +127,11 @@
                                         @endif
                                         @endforeach
                                         @if($cek_subtanya <= 0) <!-- pilihan di pertanyaan -->
-                                            <td>
+                                            <td style="padding: 10px;">
                                                 @foreach($pilihan as $pilih)
                                                 @if($pilih->id_pertanyaan == $tanya->id_pertanyaan)
                                                 <div class="form-check">
-                                                    <input class="form-check-input mb-5" type="radio" name="<?='pilihan_' . $tanya->id_pertanyaan;?>" value="<?=$pilih->bobot?>" required> {{$pilih->nama_pilihan}}
+                                                    <input class="form-check-input" type="radio" name="<?='pilihan_' . $tanya->id_pertanyaan;?>" value="<?=$pilih->bobot?>" required> {{$pilih->nama_pilihan}}
                                                 </div>
                                                 @endif
                                                 @endforeach
@@ -147,12 +145,11 @@
                         </table>
                     </div>
                 </div>
-                <a href="{{ route('akreditasi.index') }}" class="btn btn-primary">Kembali</a>
+                <a href="{{ route('akreditasi.index') }}" class="btn btn-secondary">Kembali</a>
                 <!-- <input type="submit" href="" value="Simpan" class="btn btn-success float-right"> -->
-                <button type="submit" name="submit" class="btn btn-success">Simpan</button>
+                <button type="submit" name="submit" class="btn btn-primary">Simpan</button>
             </form>
         </div>
     </div>
-
 </section>
 @endsection

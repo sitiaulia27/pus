@@ -23,7 +23,7 @@
               <div class="phone">
                 <i class="bi bi-phone"></i>
                 <h4>Telepon:</h4>
-                <p></p>
+                <p>+62 822-5235-1548</p>
               </div>
             </div>
           </div>

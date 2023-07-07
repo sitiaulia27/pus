@@ -18,7 +18,7 @@ class CreatePertanyaansTable extends Migration
             $table->unsignedInteger('sub_komponen_id')->nullable();
             $table->unsignedInteger('sub_sub_komponen_id')->nullable();
             $table->longText('nama_pertanyaan');
-            $table->enum('jenis_pilihan', ['satu', 'banyak']);
+            // $table->enum('jenis_pilihan', ['satu', 'banyak']);
             $table->integer('nilai')->nullable();
             $table->timestamps();
 

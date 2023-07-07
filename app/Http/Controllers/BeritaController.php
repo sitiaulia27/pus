@@ -17,7 +17,7 @@ class BeritaController extends Controller
      */
     public function index()
     {
-        $data = Berita::all();
+        $data = Berita::orderBy('created_at', 'desc')->get();
         return view('berita.index', compact('data'));
     }
 
@@ -138,7 +138,7 @@ class BeritaController extends Controller
 
     public function json(Request $request)
     {
-        $data = Berita::orderBy('id', 'ASC')->get();
+        $data = Berita::orderBy('created_at', 'desc')->get();
 
         return DataTables::of($data)
             ->addIndexColumn()

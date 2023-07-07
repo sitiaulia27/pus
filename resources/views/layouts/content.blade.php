@@ -49,24 +49,25 @@
     <div class="container">
         <div class="card-container">
             @foreach ($data as $row)
-            <div class="card" style="width: 18rem;">
-            <img src="{{ asset('storage/' . $row->image) }}" width="100" height="auto" class="card-img-top" alt="Gambar">
-                <div class="card-body">
-                    <h5 class="card-title">{{ $row->judul }}</h5>
-                    <p class="card-text">
-                        @if (strlen($row->body) > 50)
-                            {!! html_entity_decode(substr($row->body, 0, 50) . '...' )!!}
-                        @else
-                        {!! html_entity_decode($row->body) !!}
-                        @endif
-                    </p>
+                <div class="card" style="width: 16rem;">
+                    <img src="{{ asset('storage/' . $row->image) }}" width="100" height="200" class="card-img-top" alt="Gambar">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ $row->judul }}</h5>
+                        <p class="card-text">
+                            @if (strlen($row->body) > 50)
+                                {!! html_entity_decode(substr($row->body, 0, 50) . '...' )!!}
+                            @else
+                                {!! html_entity_decode($row->body) !!}
+                            @endif
+                        </p>
                         <div class="text-center">
                             <a href="{{ route('postberita', $row->slug) }}" class="btn btn-primary">Selengkapnya</a>
                         </div>
+                    </div>
                 </div>
-            </div>
             @endforeach
         </div>
     </div>
 </section>
+
 @endsection

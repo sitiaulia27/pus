@@ -12,6 +12,7 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Dosis:300,400,500,,600,700,700i|Lato:300,300i,400,400i,700,700i" rel="stylesheet">
 
         <!-- Vendor CSS Files -->
+        <link rel="icon" type="image/x-icon" href="{{ asset('img/polindra.png')}}"/>
         <link href="{{ asset('butterfly/css/styleCarousel.css') }}" rel="stylesheet">
         <link href="{{ asset('butterfly/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
         <link href="{{ asset('butterfly/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">

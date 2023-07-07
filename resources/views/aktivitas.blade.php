@@ -31,7 +31,6 @@
 <center><div class="card" style="width: 25rem;">
     <div class="card-header">
         <h5 class="card-title">Buku yang Sering Dipinjam Bulan Ini</h5>
-        <a href="{{ route('StoreDataPeminjaman') }}" >Data Peminjaman</a>
     </div>
     <div class="card-body">
         <ul class="list-group">
@@ -53,6 +52,11 @@
         </ul>
     </div>
 </div></center>
+
+
+
+
+
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>

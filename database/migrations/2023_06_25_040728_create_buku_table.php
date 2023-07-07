@@ -17,6 +17,8 @@ class CreateBukuTable extends Migration
             $table->id();
             $table->string('book_name');
             $table->unsignedBigInteger('member_id');
+            $table->string('last_update');
+            $table->integer('biblio_id');
             $table->timestamps();
 
         });

@@ -30,15 +30,18 @@ class AktivitasController extends Controller
             ],
             'verify' => false, // Disable SSL verification if needed
         ]);
+        // dd(json_decode($response1->getBody(), true));
         if ($response1->getStatusCode() === 200) {
             $responseData1 = json_decode($response1->getBody(), true);
 
             if ($responseData1['meta']['status'] === 'success') {
                 $data1 = $responseData1['result']['data'];
+                // dd($data1);
 
                 // Loop melalui setiap entri data
                 $i = 1;
                 foreach ($data1 as $entry) {
+                    // dd($entry['member_id']);
                     DB::table('buku')->insert([
                         'id' => $i,
                         'book_name' => $entry['book_name'],
@@ -48,7 +51,7 @@ class AktivitasController extends Controller
                 }
             }
         }
-        return $this->index();
+        return back();
     }
 
     public function index()

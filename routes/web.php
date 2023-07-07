@@ -29,9 +29,10 @@ route::get('/form', [App\Http\Controllers\MainController::class, 'form'])->name(
 route::get('/aktivitas', [App\Http\Controllers\MainController::class, 'aktivitas'])->name('aktivitas');
 route::get('/tatatertib', [App\Http\Controllers\MainController::class, 'tatatertib'])->name('tatatertib');
 route::get('/sirkuref', [App\Http\Controllers\MainController::class, 'sirkuref'])->name('sirkuref');
-route::get('/mulmedadmin', [App\Http\Controllers\MainController::class, 'mulmedadmin'])->name('mulmedadmin');
+route::get('/baca_admin', [App\Http\Controllers\MainController::class, 'baca_admin'])->name('baca_admin');
 route::get('/peminjaman', [App\Http\Controllers\MainController::class, 'peminjaman'])->name('peminjaman');
-route::get('/postberita', [App\Http\Controllers\MainController::class, 'postberita'])->name('postberita');
+route::get('/layanan_lainnya', [App\Http\Controllers\MainController::class, 'layanan_lainnya'])->name('layanan_lainnya');
+route::get('/postberita/{slug}', [App\Http\Controllers\MainController::class, 'postberita'])->name('postberita');
 
 //aktivitas
 route::get('/aktivitas', [App\Http\Controllers\AktivitasController::class, 'index'])->name('aktivitas');
@@ -59,4 +60,6 @@ Route::group(['admin' => 'dashboard', 'middleware' => ['web', 'auth']], function
     //Akreditasi
     Route::get('akreditasi/json', [AkreditasiController::class, 'json'])->name('akreditasi.index.json');
     Route::resource("akreditasi", AkreditasiController::class);
+
 });
+Route::post('/akreditas/akreditasiUpdate', [App\Http\Controllers\AkreditasiController::class, 'update'])->name('akre');

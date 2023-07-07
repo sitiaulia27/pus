@@ -8,6 +8,7 @@ class Pertanyaan extends Model
 {
     protected $table = 'pertanyaans';
     protected $primaryKey = 'sub_komponen_id';
+    protected $guarded = [];
 
     public function subKomponen()
     {

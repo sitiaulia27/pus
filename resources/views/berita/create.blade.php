@@ -35,15 +35,10 @@
                             @error('body')
                             <p class="text-danger">{{ $message }}</p>
                             @enderror
-                            <input id="body" type="hidden" name="body">
                             <div class="col-sm-12 col-md-17">
-                                <textarea id="body" name="body" class="summernote"></textarea>
+                                <textarea id="deskripsi" name="body"></textarea>
                             </div>
                         </div>
-
-
-
-
                         <a class="btn btn-info" href="{{ route('berita.index') }}">Kembali</a>
                         <input type="submit" href="" value="Simpan" class="btn btn-success float-right">
                     </form>
@@ -52,27 +47,13 @@
         </div>
 </section>
 
-<script>
-    $(document).ready(function() {
-    $('.summernote').summernote({
-    });
-});
-</script>
-
-<!-- <script>
-    function previewImage(){
-    const image = document.querySelector('#foto');
-    const imgPreview = document.querySelector('.img-preview');
-
-    imgPreview.style.display = 'block';
-
-    const oFReader = new FileReader();
-    oFReader.readAsDataURL(image.files[0]);
-
-    oFReader.onload = function(oFREvent){
-        imgPreview.src = oFREvent.target.result;
-    }
-}
-</script> -->
-
 @endsection
+@push('page-scripts')
+<script src="{{ asset('assets/ckeditor/ckeditor.js') }}"></script>
+<script>
+        $(function() {
+            CKEDITOR.replace('deskripsi')
+            console.log("ADA");
+        })
+    </script>
+@endpush

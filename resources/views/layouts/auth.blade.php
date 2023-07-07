@@ -6,6 +6,7 @@
   <title>Login &mdash; perpus</title>
 
   <!-- General CSS Files -->
+  <link rel="icon" type="image/x-icon" href="{{ asset('img/polindra.png')}}"/>
   <link rel="stylesheet" href="{{ asset('admin/modules/bootstrap/css/bootstrap.min.css') }}">
   <link rel="stylesheet" href="{{ asset('admin/modules/fontawesome/css/all.min.css') }}">
 

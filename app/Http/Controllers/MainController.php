@@ -9,7 +9,7 @@ class MainController extends Controller
 {
     public function index()
     {
-        $data = Berita::get();
+        $data = Berita::orderBy('created_at', 'desc')->get();
         return view('layouts.content', compact('data'));
     }
 
@@ -44,14 +44,21 @@ class MainController extends Controller
         return view('sirkuref');
     }
 
-    public function mulmedadmin()
+    public function baca_admin()
     {
-        return view('mulmedadmin');
+        return view('baca_admin');
     }
 
-    public function postberita()
+    public function layanan_lainnya()
     {
-        $data = Berita::get();
+        return view('layanan_lainnya');
+    }
+
+    public function postberita($slug)
+    {
+        $data = [
+            "detail" => Berita::where("slug", $slug)->first(),
+        ];
         return view('postberita', compact('data'));
     }
 

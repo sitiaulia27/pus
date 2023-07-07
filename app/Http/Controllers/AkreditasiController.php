@@ -55,21 +55,33 @@ class AkreditasiController extends Controller
     {
         $komponen = Komponen::where('komponen_id', $id)->first();
         $sub = SubKomponen::where('komponen_id', $id)->get();
-        $ids = '';
+        $array = [];
         foreach ($sub as $s) {
-            $ids .= $s->sub_komponen_id . ',';
+            array_push($array, $s->sub_komponen_id);
         }
-        $arr = rtrim($ids, ",");
-        $array = explode(",", $arr);
+
         $subSub = SubSubKomponen::whereIn('sub_komponen_id', $array)->get();
+        $array2 = [];
+        foreach ($subSub as $ss) {
+            array_push($array2, $ss->sub_sub_komponen_id);
+        }
 
-        $pertanyaan = Pertanyaan::all();
+        $pertanyaan = Pertanyaan::whereIn('sub_komponen_id', $array)->orWhereIn('sub_sub_komponen_id', $array2)->get();
+        $array3 = [];
+        foreach ($pertanyaan as $tanya) {
+            array_push($array3, $tanya->id_pertanyaan);
+        }
 
-        $pilihan = Pilihan::all();
+        $pilihan = Pilihan::whereIn('id_pertanyaan', $array3)->get();
 
-        $subPertanyaan = SubPertanyaan::all();
+        $subPertanyaan = SubPertanyaan::whereIn('id_pertanyaan', $array3)->get();
+        $array4 = [];
+        foreach ($subPertanyaan as $sp) {
+            array_push($array4, $sp->sub_pertanyaan_id);
+        }
+        $pilihanSub = Pilihan::whereIn('sub_pertanyaan_id', $array4)->get();
 
-        return view('akreditasi.show', compact('komponen', 'sub', 'subSub', 'pertanyaan', 'pilihan', 'subPertanyaan'));
+        return view('akreditasi.show', compact('komponen', 'sub', 'subSub', 'pertanyaan', 'pilihan', 'subPertanyaan', 'pilihanSub'));
     }
 
     /**
@@ -92,7 +104,54 @@ class AkreditasiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        return $request;
+        $komponen = Komponen::where('komponen_id', $id)->first();
+        $sub = SubKomponen::where('komponen_id', $id)->get();
+        $array = [];
+        foreach ($sub as $s) {
+            array_push($array, $s->sub_komponen_id);
+        }
+
+        $subSub = SubSubKomponen::whereIn('sub_komponen_id', $array)->get();
+        $array2 = [];
+        foreach ($subSub as $ss) {
+            array_push($array2, $ss->sub_sub_komponen_id);
+        }
+
+        $pertanyaan = Pertanyaan::whereIn('sub_komponen_id', $array)->orWhereIn('sub_sub_komponen_id', $array2)->get();
+        $array3 = [];
+        foreach ($pertanyaan as $tanya) {
+            array_push($array3, $tanya->id_pertanyaan);
+        }
+
+        $subPertanyaan = SubPertanyaan::whereIn('id_pertanyaan', $array3)->get();
+        // return $subPertanyaan;
+
+        foreach ($pertanyaan as $tanya) {
+            if ($request->get("pilihan_$tanya->id_pertanyaan") && $request->get("pilihan_$tanya->id_pertanyaan") != null) {
+                $add = Pertanyaan::where('id_pertanyaan', $tanya->id_pertanyaan)->firstOrFail();
+                $add->id_pertanyaan = $tanya->id_pertanyaan;
+                $add->nilai = $request->get("pilihan_$tanya->id_pertanyaan");
+                $save = $add->save();
+            }
+        }
+        foreach ($subPertanyaan as $sp) {
+            if ($request->get("pilihan_sub_$sp->sub_pertanyaan_id") && $request->get("pilihan_sub_$sp->sub_pertanyaan_id") != null) {
+                $add = Pertanyaan::where('id_pertanyaan', $sp->id_pertanyaan)->firstOrFail();
+                $add->id_pertanyaan = $sp->id_pertanyaan;
+                $add->nilai = $request->get("pilihan_sub_$sp->sub_pertanyaan_id");
+                $save = $add->save();
+            }
+        }
+        $jum = count($pertanyaan);
+        $sum = Pertanyaan::whereIn('sub_komponen_id', $array)->orWhereIn('sub_sub_komponen_id', $array2)->sum('nilai');
+        $nilai = ($sum / $jum) / 5 * 100;
+        $edit = Komponen::where('komponen_id', $id)->firstOrFail();
+        $edit->komponen_id = $id;
+        $edit->nilai = $nilai;
+        $save = $edit->save();
+        if ($save) {
+            return redirect()->to('/akreditasi');
+        }
     }
 
     /**
@@ -126,6 +185,5 @@ class AkreditasiController extends Controller
             })
             ->rawColumns(['action'])
             ->make(true);
-
     }
 }

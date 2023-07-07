@@ -21,6 +21,9 @@
             <li class="dropdown">
               <a class="nav-link {{ setActive('akreditasi.index') }}" href="{{ route('akreditasi.index') }}"><i class="far fa-file"></i> <span>Akreditasi</span></a>
             </li>
+            <li class="dropdown">
+              <a class="nav-link " href="{{ route('StoreDataPeminjaman') }}" ><i class="far fa-book"></i> <span>Data Peminjaman</span></a>
+            </li>
 
             <li class="dropdown">
               <a href="{{ route('logout') }}" class="nav-link"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a>

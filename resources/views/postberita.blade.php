@@ -6,9 +6,9 @@
         @foreach ($data as $key => $row)
             @if ($key == 0)
         <div class="text-center">
-            <h2 class="section-heading text-uppercase"><b>{{ $row->judul }}</b></h2>
+            <h3 class="section-heading text-uppercase"><b>{{ $row->judul }}</b></h3>
             <hr>
-                    <img src="{{asset('storage/' . $row->image)}}" class="img-fluid" style="max-width: 60%; height: auto;" class="card-img-top" alt="Gambar">
+                    <img src="{{asset('storage/' . $row->image)}}" class="img-fluid" style="max-width: 55%; height: auto;" class="card-img-top" alt="Gambar">
                     <div class="timeline-panel pt-3 text-justify">
                         <div class="description"><h5>
                             {!! html_entity_decode($row->body) !!}
@@ -19,6 +19,4 @@
         </div>
     </div>
 </section>
-
-
 @endsection
