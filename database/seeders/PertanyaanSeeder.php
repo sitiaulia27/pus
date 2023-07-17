@@ -19,15 +19,14 @@ class PertanyaanSeeder extends Seeder
             [
                 'sub_komponen_id' => null,
                 'sub_sub_komponen_id' => 1,
-                'nama_pertanyaan' =>
-                'Memiliki kebijakan tertulis pengembangan koleksi dan disahkan oleh pihak yang berwenang, yang memuat:
-                1. Kriteria seleksi bahan perpustakaan,
-                2. Jenis dan jumlah koleksi yang harus dimiliki,
-                3. Kebijakan tentang koleksi khusus dan penambahan koleksi,
-                4. Metode perolehan dan peruntukan koleksi,
-                5. Evaluasi koleksi dan penyiangan,
-                6. Sistem pemeliharaan dan pengendalian koleksi,
-                7. Aspek lain terkait,',
+                'nama_pertanyaan' => 'Memiliki kebijakan tertulis pengembangan koleksi dan disahkan oleh pihak yang berwenang, yang memuat:
+                <br>1. Kriteria seleksi bahan perpustakaan
+                <br>2. Jenis dan jumlah koleksi yang harus dimiliki
+                <br>3. Kebijakan tentang koleksi khusus dan penambahan koleksi
+                <br>4. Metode perolehan dan peruntukan koleksi
+                <br>5. Evaluasi koleksi dan penyiangan
+                <br>6. Sistem pemeliharaan dan pengendalian koleksi
+                <br>7. Aspek lain terkait.',
 
             ],
             [
@@ -35,13 +34,13 @@ class PertanyaanSeeder extends Seeder
                 'sub_sub_komponen_id' => 1,
                 'nama_pertanyaan' =>
                 'Pelaksanaan kebijakan pengembangan koleksi (laporan pelaksanaan) yang memuat:
-                1. Kriteria seleksi bahan perpustakaan,
-                2. Jenis dan jumlah koleksi yang harus dimiliki,
-                3. Kebijakan tentang koleksi khusus dan penambahan koleksi,
-                4. Metode perolehan dan peruntukan koleksi,
-                5. Evaluasi koleksi dan penyiangan,
-                6. Sistem pemeliharaan dan pengendalian koleksi,
-                7. Aspek lain terkait',
+                <br>1. Kriteria seleksi bahan perpustakaan
+                <br>2. Jenis dan jumlah koleksi yang harus dimiliki
+                <br>3. Kebijakan tentang koleksi khusus dan penambahan koleksi
+                <br>4. Metode perolehan dan peruntukan koleksi
+                <br>5. Evaluasi koleksi dan penyiangan
+                <br>6. Sistem pemeliharaan dan pengendalian koleksi
+                <br>7. Aspek lain terkait',
 
             ],
 
@@ -76,12 +75,12 @@ class PertanyaanSeeder extends Seeder
                 'sub_komponen_id' => null,
                 'sub_sub_komponen_id' => 3,
                 'nama_pertanyaan' => 'Jenis koleksi muatan lokal atau repositori terdiri dari hasil karya ilmiah civitas academica, meliputi :
-                1) Skripsi, tesis dan disertasi,
-                2) Makalah seminar, simposium, konferensi,
-                3) Laporan hasil penelitian, laporan pengabdian masyarakat,dll,
-                4) Pidato pengukuhan,
-                5) Artikel yang dipublikasikan di jurnal nasional maupun internasional,
-                6) Publikasi internal kampus : jurnal kampus, dll.',
+                <br>1) Skripsi, tesis dan disertasi
+                <br>2) Makalah seminar, simposium, konferensi
+                <br>3) Laporan hasil penelitian, laporan pengabdian masyarakat,dll
+                <br>4) Pidato pengukuhan
+                <br>5) Artikel yang dipublikasikan di jurnal nasional maupun internasional
+                <br>6) Publikasi internal kampus : jurnal kampus, dll.',
 
             ],
             [
@@ -122,11 +121,11 @@ class PertanyaanSeeder extends Seeder
                 'sub_komponen_id' => 2,
                 'sub_sub_komponen_id' => null,
                 'nama_pertanyaan' => 'Jenis kebijakan tertulis dalam pengorganisasian koleksi perpustakaan yang dimiliki:
-                1) Pedoman,
-                2) SOP,
-                3) Alur kerja,
-                4) Form/worksheet,
-                5) Manual sistem pengatalogan.',
+                <br>1) Pedoman
+                <br>2) SOP
+                <br>3) Alur kerja
+                <br>4) Form/worksheet
+                <br>5) Manual sistem pengatalogan.',
 
             ],
             [
@@ -134,16 +133,16 @@ class PertanyaanSeeder extends Seeder
                 'sub_sub_komponen_id' => null,
                 'nama_pertanyaan' => 'Penerapan standar/pedoman dalam pengorganisasian koleksi perpustakaan; (1) deskripsi bibliografi, (2) klasifikasi, dan (3) tajuk subjek.
                 Jenis bahan perpustakaan:
-                1) Monograf,
-                2) Serial,
-                3) Kartografi,
-                4) Sumber bahan elektronik,
-                5) Bentuk mikro,
-                6) Braille,
-                7) Rekaman suara,
-                8) Literatur kelabu,
-                9) Rekaman video,
-                10) Manuskrip.',
+                <br>1) Monograf
+                <br>2) Serial
+                <br>3) Kartografi
+                <br>4) Sumber bahan elektronik
+                <br>5) Bentuk mikro
+                <br>6) Braille
+                <br>7) Rekaman suara
+                <br>8) Literatur kelabu
+                <br>9) Rekaman video
+                <br>10) Manuskrip.',
 
             ],
             [
@@ -170,12 +169,12 @@ class PertanyaanSeeder extends Seeder
                 'sub_komponen_id' => 3,
                 'sub_sub_komponen_id' => null,
                 'nama_pertanyaan' => 'Kegiatan pelestarian (perawatan dan perbaikan kerusakan) koleksi secara preventif dan kuratif seperti:
-                    1) Alih media,
-                    2) Menjilid kembali,
-                    3) Perbaikan menambal,
-                    4) Fumigasi,
-                    5) Meletakkan kapur barus, silica gel,
-                    6) dan lain-lain.',
+                    <br>1) Alih media
+                    <br>2) Menjilid kembali
+                    <br>3) Perbaikan menambal
+                    <br>4) Fumigasi
+                    <br>5) Meletakkan kapur barus, silica gel
+                    <br>6) dan lain-lain.',
 
             ],
 
@@ -190,11 +189,11 @@ class PertanyaanSeeder extends Seeder
                 'sub_komponen_id' => 4,
                 'sub_sub_komponen_id' => null,
                 'nama_pertanyaan' => 'Status kepemilikan dan desain gedung/ruang perpustakaan :
-                1) Gedung milik sendiri/lembaga induk,
-                2) Terpisah dari ruang kuliah,
-                3) Desain gedung khusus,
-                4) Dialokasikan untuk perpustakaan,
-                5) Desain ruang khusus. ',
+                <br>1) Gedung milik sendiri/lembaga induk
+                <br>2) Terpisah dari ruang kuliah
+                <br>3) Desain gedung khusus
+                <br>4) Dialokasikan untuk perpustakaan
+                <br>5) Desain ruang khusus. ',
 
             ],
 
@@ -223,13 +222,13 @@ class PertanyaanSeeder extends Seeder
                 'sub_komponen_id' => null,
                 'sub_sub_komponen_id' => 6,
                 'nama_pertanyaan' => 'Perangkat multimedia yang dimiliki :
-                1) Komputer yang terhubung internet,
-                2) LCD,
-                3) Scanner,
-                4) printer,
-                5) VCD/DVD Player,
-                6) Televisi,
-                7)dan lain-lain.',
+                <br>1) Komputer yang terhubung internet
+                <br>2) LCD
+                <br>3) Scanner
+                <br>4) printer
+                <br>5) VCD/DVD Player
+                <br>6) Televisi
+                <br>7)dan lain-lain.',
 
             ],
 
@@ -238,12 +237,12 @@ class PertanyaanSeeder extends Seeder
                 'sub_komponen_id' => 5,
                 'sub_sub_komponen_id' => 7,
                 'nama_pertanyaan' => 'Sarana layanan pemustaka meliputi:
-                1) Layanan baca ditempat,
-                2) Layanan informasi,
-                3) Layanan sirkulasi,
-                4) Layanan referensi,
-                5) Layanan konsultasi,
-                6) Layanan lain.',
+                <br>1) Layanan baca ditempat
+                <br>2) Layanan informasi
+                <br>3) Layanan sirkulasi
+                <br>4) Layanan referensi
+                <br>5) Layanan konsultasi
+                <br>6) Layanan lain.',
 
             ],
             [
@@ -284,13 +283,13 @@ class PertanyaanSeeder extends Seeder
                 'sub_komponen_id' => 5,
                 'sub_sub_komponen_id' => 9,
                 'nama_pertanyaan' => 'Jenis sarana keamanan gedung dan fasilitas perpustakaan;
-                1) CCTV,
-                2) Pintu detektor,
-                3) Tempat penitipan barang/loker),
-                4) Pintu darurat,
-                5) Alarm tanda bahaya,
-                6) Alat pemadam api,
-                7) Tenaga sekuriti. ',
+                <br>1) CCTV
+                <br>2) Pintu detektor
+                <br>3) Tempat penitipan barang/loker)
+                <br>4) Pintu darurat
+                <br>5) Alarm tanda bahaya
+                <br>6) Alat pemadam api
+                <br>7) Tenaga sekuriti. ',
 
             ],
 
@@ -299,24 +298,24 @@ class PertanyaanSeeder extends Seeder
                 'sub_komponen_id' => 5,
                 'sub_sub_komponen_id' => 10,
                 'nama_pertanyaan' => 'Fasilitas umum:
-                1) Mushola,
-                2) Toilet,
-                3) Parkir,
-                4) Kantin,
-                5) Sarana khusus, difabel,
-                6) ATM,
-                7) dan lain-lain. ',
+                <br>1) Mushola
+                <br>2) Toilet
+                <br>3) Parkir
+                <br>4) Kantin
+                <br>5) Sarana khusus, difabel
+                <br>6) ATM
+                <br>7) dan lain-lain. ',
 
             ],
             [
                 'sub_komponen_id' => 5,
                 'sub_sub_komponen_id' => 10,
                 'nama_pertanyaan' => 'Rambu-rambu perpustakaan yang tersedia :
-                1) Papan nama perpustakaan,
-                2) Denah lokasi perpustakaan/petunjuk arah,
-                3) Denah ruang perpustakaan,
-                4) Papan nama ruang,
-                5) Direktori ruangan perpustakaan tercetak/elektronik. ',
+                <br>1) Papan nama perpustakaan
+                <br>2) Denah lokasi perpustakaan/petunjuk arah
+                <br>3) Denah ruang perpustakaan
+                <br>4) Papan nama ruang
+                <br>5) Direktori ruangan perpustakaan tercetak/elektronik. ',
 
             ],
 
@@ -325,36 +324,36 @@ class PertanyaanSeeder extends Seeder
                 'sub_komponen_id' => 6,
                 'sub_sub_komponen_id' => null,
                 'nama_pertanyaan' => 'Jenis layanan perpustakaan:
-                1) Layanan baca ditempat,
-                2) Layanan sirkulasi,
-                3) Layanan referensi,
-                4) Layanan penelusuran,
-                5) Layanan literasi informasi,
-                6) Layanan penyediaan dokumen,
-                7) Layanan silang layan,
-                8) Layanan ekstensi,',
+                <br>1) Layanan baca ditempat
+                <br>2) Layanan sirkulasi
+                <br>3) Layanan referensi
+                <br>4) Layanan penelusuran
+                <br>5) Layanan literasi informasi
+                <br>6) Layanan penyediaan dokumen
+                <br>7) Layanan silang layan
+                <br>8) Layanan ekstensi.',
 
             ],
             [
                 'sub_komponen_id' => 6,
                 'sub_sub_komponen_id' => null,
                 'nama_pertanyaan' => 'Jenis layanan referensi yang disediakan:
-                1) Layanan informasi (reference desk)
-                2) Layanan bimbingan penggunaan koleksi referensi
-                3) Layanan penelusuran
-                4) Layanan konsultasi riset
-                5) Layanan cek plagiarism',
+                <br>1) Layanan informasi (reference desk)
+                <br>2) Layanan bimbingan penggunaan koleksi referensi
+                <br>3) Layanan penelusuran
+                <br>4) Layanan konsultasi riset
+                <br>5) Layanan cek plagiarism',
 
             ],
             [
                 'sub_komponen_id' => 6,
                 'sub_sub_komponen_id' => null,
                 'nama_pertanyaan' => 'Kegiatan peningkatan layanan perpustakaan :
-                1) Survei kebutuhan layanan pemustaka
-                2) Survei kepuasan pemustaka
-                3) Diversifikasi layanan
-                4) Pelibatan civitas academica dalam layanan
-                5) Layanan ekstensi',
+                <br>1) Survei kebutuhan layanan pemustaka
+                <br>2) Survei kepuasan pemustaka
+                <br>3) Diversifikasi layanan
+                <br>4) Pelibatan civitas academica dalam layanan
+                <br>5) Layanan ekstensi',
 
             ],
 
@@ -383,12 +382,12 @@ class PertanyaanSeeder extends Seeder
                 'sub_komponen_id' => 8,
                 'sub_sub_komponen_id' => null,
                 'nama_pertanyaan' => 'Fitur Website perpustakaan
-                1) Profil perpustakaan
-                2) OPAC
-                3) Informasi layanan perpustakaan
-                4) Kontak perpustakaan
-                5) Link ke basis data online/repositori
-                6) Media sosial',
+                <br>1) Profil perpustakaan
+                <br>2) OPAC
+                <br>3) Informasi layanan perpustakaan
+                <br>4) Kontak perpustakaan
+                <br>5) Link ke basis data online/repositori
+                <br>6) Media sosial',
 
             ],
 
@@ -431,13 +430,13 @@ class PertanyaanSeeder extends Seeder
                 'sub_komponen_id' => 11,
                 'sub_sub_komponen_id' => null,
                 'nama_pertanyaan' => 'Jenis kegiatan promosi yang dilaksanakan melalui media cetak dan elektronik:
-                1) Penyebaran informasi,
-                2) Penyuluhan,
-                3) Lomba,
-                4) Pameran,
-                5) Duta baca,
-                6) Bimbingan pemustaka,
-                7) Penyiaran',
+                <br>1) Penyebaran informasi
+                <br>2) Penyuluhan
+                <br>3) Lomba
+                <br>4) Pameran
+                <br>5) Duta baca
+                <br>6) Bimbingan pemustaka
+                <br>7) Penyiaran',
 
             ],
             [
@@ -452,12 +451,12 @@ class PertanyaanSeeder extends Seeder
                 'sub_komponen_id' => 12,
                 'sub_sub_komponen_id' => null,
                 'nama_pertanyaan' => 'Peran perpustakaan dalam mengurangi praktek plagiarisme:
-                1) menyediakan aplikasi online pengontrol plagiarisme;
-                2) memberi topik plagiarisme dalam kegiatan literasi;
-                3) mengontrol pemustaka dalam layanan fotocopy
-                4) melakukan himbauan anti plagiarisme
-                5) melakukan himbauan anti plagiarisme melalui media sosial
-                6) dan lain-lain',
+                <br>1) menyediakan aplikasi online pengontrol plagiarisme;
+                <br>2) memberi topik plagiarisme dalam kegiatan literasi;
+                <br>3) mengontrol pemustaka dalam layanan fotocopy
+                <br>4) melakukan himbauan anti plagiarisme
+                <br>5) melakukan himbauan anti plagiarisme melalui media sosial
+                <br>6) dan lain-lain',
 
             ],
 
@@ -478,10 +477,10 @@ class PertanyaanSeeder extends Seeder
                 'sub_komponen_id' => 13,
                 'sub_sub_komponen_id' => null,
                 'nama_pertanyaan' => 'Jumlah Pengembangan Keprofesian Berkelanjutan (PKB) kepala perpustakaan di bidang perpustakaan dalam 3 (tiga) tahun terakhir
-                1) Sertifikat diklat manajemen perpustakaan,
-                2) Sertifikat diklat teknis perpustakaan,
-                3) Sertifikat kompetensi/profesi pustakawan,
-                4) Sertifikat bimtek/workshop, dll bidang kepustakawanan',
+                <br>1) Sertifikat diklat manajemen perpustakaan,
+                <br>2) Sertifikat diklat teknis perpustakaan,
+                <br>3) Sertifikat kompetensi/profesi pustakawan,
+                <br>4) Sertifikat bimtek/workshop, dll bidang kepustakawanan',
 
             ],
 
@@ -558,11 +557,11 @@ class PertanyaanSeeder extends Seeder
                 'sub_komponen_id' => 17,
                 'sub_sub_komponen_id' => null,
                 'nama_pertanyaan' => 'Unsur Komite Perpustakaan/ sejenisnya terdiri atas :
-                1) Pimpinan PT,
-                2) Pimpinan Fakultas/ Jurusan/Prodi,
-                3) Dosen (Fungsional/ Profesional),
-                4) Pustakawan,
-                5) Mahasiswa',
+                <br>1) Pimpinan PT
+                <br>2) Pimpinan Fakultas/ Jurusan/Prodi
+                <br>3) Dosen (Fungsional/ Profesional)
+                <br>4) Pustakawan
+                <br>5) Mahasiswa',
 
             ],
 
@@ -571,12 +570,12 @@ class PertanyaanSeeder extends Seeder
                 'sub_komponen_id' => 18,
                 'sub_sub_komponen_id' => null,
                 'nama_pertanyaan' => 'Struktur organisasi perpustakaan:
-                1) Kepala Perpustakaan,
-                2) Bidang Layanan Teknis,
-                3) Bidang Layanan Pemustaka,
-                4) Bidang Layanan TI,
-                5) Bagian Administrasi dan Tata Usaha,
-                6) Kelompok Fungsional Pustakawan',
+                <br>1) Kepala Perpustakaan
+                <br>2) Bidang Layanan Teknis
+                <br>3) Bidang Layanan Pemustaka
+                <br>4) Bidang Layanan TI
+                <br>5) Bagian Administrasi dan Tata Usaha
+                <br>6) Kelompok Fungsional Pustakawan',
 
             ],
             [
@@ -591,17 +590,17 @@ class PertanyaanSeeder extends Seeder
                 'sub_komponen_id' => 19,
                 'sub_sub_komponen_id' => null,
                 'nama_pertanyaan' => 'Pencantuman NPP:
-                1) Papan nama perpustakaan,
-                2) Kop surat resmi perpustakaan,
-                3) Backdrop meja sirkulasi/layanan
-                4) Brosur perpustakaan,
-                5) Banner/flyer perpustakaan,
-                6) Website perpustakaan,
-                7) Kartu anggota perpustakaan,
-                8) Media sosial milik perpustakaan,
-                9) Kalender,
-                10) Running text,
-                11) dan lain-lain',
+                <br>1) Papan nama perpustakaan
+                <br>2) Kop surat resmi perpustakaan
+                <br>3) Backdrop meja sirkulasi/layanan
+                <br>4) Brosur perpustakaan
+                <br>5) Banner/flyer perpustakaan
+                <br>6) Website perpustakaan
+                <br>7) Kartu anggota perpustakaan
+                <br>8) Media sosial milik perpustakaan
+                <br>9) Kalender
+                <br>10) Running text
+                <br>11) dan lain-lain',
 
             ],
 
@@ -632,9 +631,9 @@ class PertanyaanSeeder extends Seeder
                 'sub_komponen_id' => 22,
                 'sub_sub_komponen_id' => null,
                 'nama_pertanyaan' => 'Pelaporan kinerja perpustakaan yang disahkan oleh kepala perpustakaan dalam 3 (tiga) tahun terakhir:
-                1) Tahunan,
-                2) Triwulan,
-                3) Bulanan',
+                <br>1) Tahunan
+                <br>2) Triwulan
+                <br>3) Bulanan',
 
             ],
 
@@ -663,13 +662,13 @@ class PertanyaanSeeder extends Seeder
                 'sub_komponen_id' => 24,
                 'sub_sub_komponen_id' => null,
                 'nama_pertanyaan' => 'Kerja sama Penyelenggaraan dan Pengelolaan Perpustakaan meliputi :
-                1) Jejaring internasional layanan Perpustakaan berbasis TIK,
-                2) Jejaring nasional layanan perpustakaan berbasis TIK,
-                3) Jejaring wilayah provinsi antar jenis perpustakaan,
-                4) Jejaring wilayah provinsi antar daerah Kabupaten/Kota,
-                5) Pembinaan dan Konsultansi perpustakaan,
-                6) Pengembangan system aplikasi otomasi perpustakaan,
-                7) Lainnya',
+                <br>1) Jejaring internasional layanan Perpustakaan berbasis TIK
+                <br>2) Jejaring nasional layanan perpustakaan berbasis TIK
+                <br>3) Jejaring wilayah provinsi antar jenis perpustakaan
+                <br>4) Jejaring wilayah provinsi antar daerah Kabupaten/Kota
+                <br>5) Pembinaan dan Konsultansi perpustakaan
+                <br>6) Pengembangan system aplikasi otomasi perpustakaan
+                <br>7) Lainnya',
 
             ],
 
@@ -730,12 +729,12 @@ class PertanyaanSeeder extends Seeder
                 'sub_komponen_id' => 27,
                 'sub_sub_komponen_id' => null,
                 'nama_pertanyaan' => 'Keberadaan pegiat literasi:
-                1) Sahabat perpustakaan,
-                2) Duta baca mahasiswa,
-                3) Duta baca tenaga kependidikan,
-                4) Duta baca dosen,
-                5) Penghargaan pemustaka aktif,
-                6) dan lain-lain',
+                <br>1) Sahabat perpustakaan
+                <br>2) Duta baca mahasiswa
+                <br>3) Duta baca tenaga kependidikan
+                <br>4) Duta baca dosen
+                <br>5) Penghargaan pemustaka aktif
+                <br>6) dan lain-lain',
 
             ],
 
@@ -764,13 +763,13 @@ class PertanyaanSeeder extends Seeder
                 'sub_komponen_id' => 29,
                 'sub_sub_komponen_id' => null,
                 'nama_pertanyaan' => 'Jumlah rerata kegiatan perpustakaan yang melibatkan peran serta pemustaka (dosen, tendik dan mahasiswa) setiap tahun dalam 3 (tiga) tahun terakhir meliputi:
-                1) Pengembangan koleksi,
-                2) Pendayagunaan koleksi,
-                3) Promosi layanan,
-                4) Pengembangan sarana prasarana perpustakaan,
-                5) Peningkatan kegiatan literasi,
-                6) Peningkatan kinerja penelitian,
-                7) Peningkatan pengabdian masyarakat berbasis layanan perpustakaan',
+                <br>1) Pengembangan koleksi
+                <br>2) Pendayagunaan koleksi
+                <br>3) Promosi layanan
+                <br>4) Pengembangan sarana prasarana perpustakaan
+                <br>5) Peningkatan kegiatan literasi
+                <br>6) Peningkatan kinerja penelitian
+                <br>7) Peningkatan pengabdian masyarakat berbasis layanan perpustakaan',
 
             ],
 

@@ -5,8 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Status extends Model
+class Kategori extends Model
 {
     use HasFactory;
-    protected $fillable = ['nama_status'];
+
+    protected $table = 'kategoris';
+    protected $fillable = [
+        'nama',
+    ];
 }

@@ -1,5 +1,9 @@
 @extends('layouts.index')
 
+@section('title')
+    {{ trans('Profil') }}
+@endsection
+
 @section('content')
 <section class="profil" id="profil">
     <div class="container pt-5">
@@ -39,36 +43,36 @@
     </div>
 </section>
 
-<div id="team" class="team section-bg">
+ <!-- ======= Team Section ======= -->
+ <section id="team" class="team section-bg">
     <div class="container">
-        <div class="row pt-5">
+        <div class="row">
             <div class="section-title">
                 <h2>TIM</h2>
             </div>
         </div>
         <div class="row justify-content-center">
-            <div class="card">
-                @if(isset($data[0]))
+            @if(isset($data[0]))
+                <div class="card">
                     <img src="{{ asset('storage/' . $data[0]->foto) }}" class="card-img-top">
                     <div class="card-body">
                         <p class="card-text">{{ $data[0]->nama }}</p>
                         <p class="card-text">{{ $data[0]->posisi }}</p>
                     </div>
-                @endif
-            </div>
+                </div>
+            @endif
         </div>
         <div class="row justify-content-center">
-            @foreach ($data->slice(1, 3) as $row)
-            <div class="card">
-                <img src="{{ asset('storage/' . $row->foto) }}" class="card-img-top">
-                <div class="card-body">
-                    <p class="card-text">{{ $row->nama }}</p>
-                    <p class="card-text">{{ $row->posisi }}</p>
+            @foreach ($data->slice(1) as $row)
+                <div class="card">
+                    <img src="{{ asset('storage/' . $row->foto) }}" class="card-img-top">
+                    <div class="card-body">
+                        <p class="card-text">{{ $row->nama }}</p>
+                        <p class="card-text">{{ $row->posisi }}</p>
+                    </div>
                 </div>
-            </div>
             @endforeach
         </div>
     </div>
-</div>
-
+ </section><!-- End Team Section -->
 @endsection

@@ -3,8 +3,6 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use KomponenSeeder;
-use SubSubKomponenSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -25,5 +23,8 @@ class DatabaseSeeder extends Seeder
         $this->call(PertanyaanSeeder::class);
         $this->call(SubPertanyaanSeeder::class);
         $this->call(PilihanSeeder::class);
+        $this->call(KategoriSeeder::class);
+        $this->call(LayananSeeder::class);
+        $this->call(SliderSeeder::class);
     }
 }

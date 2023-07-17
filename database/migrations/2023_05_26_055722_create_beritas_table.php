@@ -19,6 +19,7 @@ class CreateBeritasTable extends Migration
             $table->string('slug')->unique();
             $table->longText('body');
             $table->string('image');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -1,17 +1,16 @@
-
 <!-- ======= Header ======= -->
 <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center justify-content-between">
 
     <a class="logo"><img src="{{ asset('img/polindra.png')}}" alt="" class="img-fluid"></a>
-    <h5 class="logo">UPT PERPUSTAKAAN POLINDRA</a></h5>
+    <h5 class="logo">UPT PERPUSTAKAAN POLINDRA</h5>
 
 
-    <nav id="navbar" class="navbar">
+    <nav id="navbar" class="navbar" class="menu-back cbp-af-header">
         <ul>
             <li><a class="nav-link {{ setActive('layouts.index') }}" href="{{ route('layouts.index') }}">Home</a></li>
             <li><a class="nav-link {{ setActive('profil') }}" href="{{ route('profil') }}">Profil</a></li>
-            <li><a class="nav-link {{ setActive('aktivitas') }}" href="{{ route('aktivitas') }}">Aktivitas</a></li>
+            <!-- <li><a class="nav-link {{ setActive('aktivitas') }}" href="{{ route('aktivitas') }}">Aktivitas</a></li> -->
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Pelayanan
@@ -38,6 +37,7 @@
                 <li><a class="nav-link" href="{{ route('login') }}">LOGIN</a></li>
                 </ul>
             </li>
+            <li><a class="nav-link {{ setActive('informasi') }}" href="{{ route('informasi') }}">Informasi</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
     </nav><!-- .navbar -->

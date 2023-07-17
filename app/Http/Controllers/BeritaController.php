@@ -164,7 +164,6 @@ class BeritaController extends Controller
             })
             ->rawColumns(['image', 'body', 'action'])
             ->make(true);
-
     }
 
 }

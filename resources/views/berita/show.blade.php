@@ -1,5 +1,9 @@
 @extends('admin.index')
 
+@section('title')
+    {{ trans('Show berita') }}
+@endsection
+
 @section('content')
 <div class="section">
     <div class="section-header">

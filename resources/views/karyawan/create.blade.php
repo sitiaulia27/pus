@@ -1,5 +1,9 @@
 @extends('admin.index')
 
+@section('title')
+    {{ trans('Tambah Karyawan') }}
+@endsection
+
 
 @section('content')
 

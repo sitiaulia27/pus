@@ -6,10 +6,13 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
 
-  <title>Perpustakaan</title>
+  <title>@yield('title')</title>
 
         <!-- Google Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Dosis:300,400,500,,600,700,700i|Lato:300,300i,400,400i,700,700i" rel="stylesheet">
+
+        <!-- Font Awesome CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
         <!-- Vendor CSS Files -->
         <link rel="icon" type="image/x-icon" href="{{ asset('img/polindra.png')}}"/>
@@ -29,13 +32,6 @@
         <link href="{{ asset('butterfly/css/style.css') }}" rel="stylesheet">
 
 
-        <style>
-
-        .carousel-item img {
-            height: 100%;
-            object-fit: cover;
-        }
-    </style>
 
 </head>
 
@@ -51,7 +47,7 @@
         @yield('content')
       </div>
       <footer class="main-footer">
-      @include('layouts.footer')
+        @include('layouts.footer')
       </footer>
   </div>
 </div>

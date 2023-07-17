@@ -17,6 +17,7 @@ class CreateSubSubKomponensTable extends Migration
             $table->increments('sub_sub_komponen_id');
             $table->unsignedInteger('sub_komponen_id');
             $table->string('nama_sub_sub_komponen');
+            $table->softDeletes();
             $table->timestamps();
 
             $table->foreign('sub_komponen_id')->references('sub_komponen_id')->on('sub_komponens')->onDelete('cascade');

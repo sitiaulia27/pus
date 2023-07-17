@@ -65,6 +65,14 @@ h6 {
   margin: 10px;
 }
 
+/*--------------------------------------------------------------
+# carousel
+--------------------------------------------------------------*/
+.carousel-item img {
+  height: 100%;
+  object-fit: cover;
+        
+}
 
 
 /*--------------------------------------------------------------
@@ -145,7 +153,7 @@ h6 {
 
 
 #header {
-  background: #ffffff;
+  background:	#0000CD;
   transition: all 0.5s;
   z-index: 997;
   padding: 10px 0;
@@ -161,10 +169,11 @@ h6 {
   letter-spacing: 1px;
   text-transform: uppercase;
   font-family: "Lato", sans-serif;
+  color: #ffffff;
 }
 
 #header .logo a {
-  color: #0f394c;
+  color: #ffffff;
 }
 
 #header .logo img {
@@ -202,7 +211,7 @@ h6 {
   font-family: "Dosis", sans-serif;
   font-size: 15px;
   font-weight: 600;
-  color: #0f394c;
+  color: #ffffff;
   white-space: nowrap;
   transition: 0.3s;
   text-transform: uppercase;
@@ -219,7 +228,7 @@ h6 {
 .navbar .active,
 .navbar .active:focus,
 .navbar li:hover>a {
-  color: #49b5e7;
+  color: #000000;
 }
 
 .navbar .dropdown ul {
@@ -232,7 +241,7 @@ h6 {
   z-index: 99;
   opacity: 0;
   visibility: hidden;
-  background: #fff;
+  background: #0000CD;
   box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
   transition: 0.3s;
 }
@@ -255,7 +264,7 @@ h6 {
 .navbar .dropdown ul a:hover,
 .navbar .dropdown ul .active:hover,
 .navbar .dropdown ul li:hover>a {
-  color: #49b5e7;
+  color: #000000;
 }
 
 .navbar .dropdown:hover>ul {
@@ -300,7 +309,7 @@ h6 {
 }
 
 .mobile-nav-toggle.bi-x {
-  color: #fff;
+  color: #030303;
 }
 
 @media (max-width: 991px) {
@@ -402,7 +411,7 @@ h6 {
 #hero {
   width: 100%;
   height: 80vh;
-  background: #f9f9f9;
+  background: #ffffff;
 }
 
 #hero .container {
@@ -471,15 +480,29 @@ h6 {
 }
 
 /*--------------------------------------------------------------
+# row
+--------------------------------------------------------------*/
+
+
+
+
+
+
+/*--------------------------------------------------------------
 # Sections General
 --------------------------------------------------------------*/
 section {
   padding: 60px 0;
   overflow: hidden;
+  min-height: 95vh;
 }
 
 .section-bg {
-  background-color: #f4fbfe;
+  background-color: #ffffff;
+}
+
+.main-wrapper main-wrapper-1{
+  min-height: 100vh;
 }
 
 .section-title {
@@ -676,7 +699,8 @@ section {
 # Counts
 --------------------------------------------------------------*/
 .counts {
-  background: url("../img/counts-bg.jpg") center center no-repeat;
+  /* background: url("../img/counts-bg.jpg") center center no-repeat; */
+  background: rgba(139, 139, 139, 0.8);
   background-size: cover;
   padding: 80px 0 60px 0;
   position: relative;
@@ -1141,7 +1165,7 @@ section {
   margin-bottom: 20px;
   overflow: hidden;
   border-radius: 5px;
-  background: #fff;
+  background: #ffffff;
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
 }
 
@@ -1172,7 +1196,7 @@ section {
   align-items: center;
   justify-content: center;
   transition: ease-in-out 0.3s;
-  color: #fff;
+  color: #fafafa;
 }
 
 .team .member .social a:hover {
@@ -1214,6 +1238,10 @@ section {
   bottom: 15px;
 }
 
+.team{
+  background: #F0F8FF;
+}
+
 /*--------------------------------------------------------------
 # Gallery
 --------------------------------------------------------------*/
@@ -1251,6 +1279,7 @@ section {
   align-items: center;
   border-radius: 50px;
   transition: all 0.3s ease-in-out;
+  
 }
 
 .contact .info h4 {
@@ -1271,6 +1300,7 @@ section {
 .contact .info .email,
 .contact .info .phone {
   margin-top: 40px;
+  
 }
 
 .contact .info .email:hover i,
@@ -1443,7 +1473,8 @@ section {
   padding: 0 0 20px 0;
   color: #444444;
   font-size: 14px;
-  background: #e9f4f8;
+  background: #0000CD;
+  
 }
 
 #footer .footer-newsletter {
@@ -1454,7 +1485,7 @@ section {
 }
 
 #footer .footer-newsletter h4 {
-  font-size: 24px;
+  font-size: 30px;
   margin: 0 0 20px 0;
   padding: 0;
   line-height: 1;
@@ -1593,7 +1624,7 @@ section {
 
 #footer .copyright {
   float: left;
-  color: #0f394c;
+  color: #ffffff;
 }
 
 #footer .credits {

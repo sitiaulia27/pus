@@ -1,5 +1,9 @@
 @extends('admin.index')
 
+@section('title')
+    {{ trans('Dashboard') }}
+@endsection
+
 @section('content')
     <section class="section">
         <div class="section-header">

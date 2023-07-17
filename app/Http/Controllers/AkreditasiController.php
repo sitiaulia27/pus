@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Akreditasi;
 use App\Models\Komponen;
 use App\Models\Pertanyaan;
 use App\Models\Pilihan;
@@ -9,6 +10,9 @@ use App\Models\SubKomponen;
 use App\Models\SubPertanyaan;
 use App\Models\SubSubKomponen;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use PDF;
 use Yajra\DataTables\DataTables;
 
 class AkreditasiController extends Controller
@@ -21,7 +25,55 @@ class AkreditasiController extends Controller
     public function index()
     {
         $data = Komponen::all();
-        return view('akreditasi.index', compact('data'));
+        $latestData = Akreditasi::join(
+            DB::raw("(SELECT komponen_id, MAX(created_at) as max_created_at FROM akreditasi GROUP BY komponen_id) latest"),
+            function ($join) {
+                $join->on('akreditasi.komponen_id', '=', 'latest.komponen_id');
+                $join->on('akreditasi.created_at', '=', 'latest.max_created_at');
+            }
+        )->where('akreditasi.user_id', '=', Auth::user()->id)
+            ->get();
+
+        $result = 0;
+
+        foreach ($data as $item) {
+            $latestRecord = $latestData->firstWhere('komponen_id', $item->komponen_id);
+            $item->nilai = $latestRecord ? $latestRecord->nilai : null;
+            if ($latestRecord) {
+                $result += $latestRecord->nilai;
+            }
+        }
+
+        return view('akreditasi.index', compact('data', 'result'));
+    }
+
+    public function getAkreditasi()
+    {
+        $cetak = Komponen::all();
+
+        $result = 0;
+
+        foreach ($cetak as $item) {
+            $latestRecord = Akreditasi::where('komponen_id', $item->komponen_id)
+                ->latest('created_at')
+                ->first();
+
+            if ($latestRecord) {
+                $item->nilai = $latestRecord->nilai;
+                $result += $latestRecord->nilai;
+            }
+        }
+
+        // Generate PDF
+        $pdf = PDF::loadView('akreditasi.akre-cetak', compact('cetak', 'result'));
+
+        // Set the response headers for PDF download
+        $headers = [
+            'Content-Type' => 'application/pdf',
+            'Content-Disposition' => 'attachment; filename="akreditasi.pdf"',
+        ];
+
+        return response($pdf->output(), 200, $headers);
     }
 
     /**
@@ -42,7 +94,6 @@ class AkreditasiController extends Controller
      */
     public function store(Request $request)
     {
-        //
     }
 
     /**
@@ -55,33 +106,26 @@ class AkreditasiController extends Controller
     {
         $komponen = Komponen::where('komponen_id', $id)->first();
         $sub = SubKomponen::where('komponen_id', $id)->get();
-        $array = [];
+        $ids = '';
         foreach ($sub as $s) {
-            array_push($array, $s->sub_komponen_id);
+            $ids .= $s->sub_komponen_id . ',';
         }
-
+        $arr = rtrim($ids, ",");
+        $array = explode(",", $arr);
         $subSub = SubSubKomponen::whereIn('sub_komponen_id', $array)->get();
-        $array2 = [];
-        foreach ($subSub as $ss) {
-            array_push($array2, $ss->sub_sub_komponen_id);
-        }
 
-        $pertanyaan = Pertanyaan::whereIn('sub_komponen_id', $array)->orWhereIn('sub_sub_komponen_id', $array2)->get();
-        $array3 = [];
-        foreach ($pertanyaan as $tanya) {
-            array_push($array3, $tanya->id_pertanyaan);
-        }
+        $pertanyaan = Pertanyaan::all();
 
-        $pilihan = Pilihan::whereIn('id_pertanyaan', $array3)->get();
+        $pilihan = Pilihan::all();
 
-        $subPertanyaan = SubPertanyaan::whereIn('id_pertanyaan', $array3)->get();
-        $array4 = [];
-        foreach ($subPertanyaan as $sp) {
-            array_push($array4, $sp->sub_pertanyaan_id);
-        }
-        $pilihanSub = Pilihan::whereIn('sub_pertanyaan_id', $array4)->get();
+        $subPertanyaan = SubPertanyaan::all();
 
-        return view('akreditasi.show', compact('komponen', 'sub', 'subSub', 'pertanyaan', 'pilihan', 'subPertanyaan', 'pilihanSub'));
+        $latestData = Akreditasi::where("user_id", Auth::user()->id)
+            ->where("komponen_id", $id)
+            ->latest('created_at')
+            ->first();
+
+        return view('akreditasi.show', compact('komponen', 'sub', 'subSub', 'pertanyaan', 'pilihan', 'subPertanyaan', 'latestData'));
     }
 
     /**
@@ -104,54 +148,36 @@ class AkreditasiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $komponen = Komponen::where('komponen_id', $id)->first();
-        $sub = SubKomponen::where('komponen_id', $id)->get();
-        $array = [];
-        foreach ($sub as $s) {
-            array_push($array, $s->sub_komponen_id);
-        }
 
-        $subSub = SubSubKomponen::whereIn('sub_komponen_id', $array)->get();
-        $array2 = [];
-        foreach ($subSub as $ss) {
-            array_push($array2, $ss->sub_sub_komponen_id);
-        }
+        $totalPilihan = 0;
+        $totalSoal = 0;
+        $komponen_id = $request->komponen_id;
+        $user_id = Auth::user()->id;
+        $options = [];
 
-        $pertanyaan = Pertanyaan::whereIn('sub_komponen_id', $array)->orWhereIn('sub_sub_komponen_id', $array2)->get();
-        $array3 = [];
-        foreach ($pertanyaan as $tanya) {
-            array_push($array3, $tanya->id_pertanyaan);
-        }
-
-        $subPertanyaan = SubPertanyaan::whereIn('id_pertanyaan', $array3)->get();
-        // return $subPertanyaan;
-
-        foreach ($pertanyaan as $tanya) {
-            if ($request->get("pilihan_$tanya->id_pertanyaan") && $request->get("pilihan_$tanya->id_pertanyaan") != null) {
-                $add = Pertanyaan::where('id_pertanyaan', $tanya->id_pertanyaan)->firstOrFail();
-                $add->id_pertanyaan = $tanya->id_pertanyaan;
-                $add->nilai = $request->get("pilihan_$tanya->id_pertanyaan");
-                $save = $add->save();
+        foreach ($request->input() as $key => $value) {
+            if (strpos($key, 'pilihan_') === 0) {
+                $totalPilihan += intval($value);
+                $totalSoal += 1;
+                $options[$key] = $value;
             }
         }
-        foreach ($subPertanyaan as $sp) {
-            if ($request->get("pilihan_sub_$sp->sub_pertanyaan_id") && $request->get("pilihan_sub_$sp->sub_pertanyaan_id") != null) {
-                $add = Pertanyaan::where('id_pertanyaan', $sp->id_pertanyaan)->firstOrFail();
-                $add->id_pertanyaan = $sp->id_pertanyaan;
-                $add->nilai = $request->get("pilihan_sub_$sp->sub_pertanyaan_id");
-                $save = $add->save();
-            }
-        }
-        $jum = count($pertanyaan);
-        $sum = Pertanyaan::whereIn('sub_komponen_id', $array)->orWhereIn('sub_sub_komponen_id', $array2)->sum('nilai');
-        $nilai = ($sum / $jum) / 5 * 100;
-        $edit = Komponen::where('komponen_id', $id)->firstOrFail();
-        $edit->komponen_id = $id;
-        $edit->nilai = $nilai;
-        $save = $edit->save();
-        if ($save) {
-            return redirect()->to('/akreditasi');
-        }
+
+        $komponen = Komponen::where("komponen_id", $komponen_id)->first();
+
+        $score = $totalPilihan / (5 * $totalSoal) * $komponen->bobot;
+
+        $akreditasi = new Akreditasi;
+
+        $akreditasi->user_id = $user_id;
+        $akreditasi->komponen_id = $komponen_id;
+        $akreditasi->nilai = $score;
+        $akreditasi->options = json_encode($options);
+
+        $akreditasi->save();
+
+        notify()->success('Akreditasi Berhasil Disimpan');
+        return redirect()->route('akreditasi.index');
     }
 
     /**
@@ -168,6 +194,19 @@ class AkreditasiController extends Controller
     public function json(Request $request)
     {
         $data = Komponen::orderBy('komponen_id', 'ASC')->get();
+
+        $latestData = Akreditasi::join(
+            DB::raw("(SELECT komponen_id, MAX(created_at) as max_created_at FROM akreditasi GROUP BY komponen_id) latest"),
+            function ($join) {
+                $join->on('akreditasi.komponen_id', '=', 'latest.komponen_id');
+                $join->on('akreditasi.created_at', '=', 'latest.max_created_at');
+            }
+        )->get();
+
+        foreach ($data as $item) {
+            $latestRecord = $latestData->firstWhere('komponen_id', $item->komponen_id);
+            $item->nilai = $latestRecord ? $latestRecord->nilai : "-";
+        }
 
         return DataTables::of($data)
             ->addIndexColumn()

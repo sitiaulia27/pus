@@ -1,5 +1,9 @@
 @extends('admin.index')
 
+@section('title')
+    {{ trans('Karyawan') }}
+@endsection
+
 
 @section('content')
 <section class="section">

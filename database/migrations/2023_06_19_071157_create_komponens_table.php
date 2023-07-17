@@ -16,7 +16,8 @@ class CreateKomponensTable extends Migration
         Schema::create('komponens', function (Blueprint $table) {
             $table->increments('komponen_id');
             $table->string('nama_komponen');
-            $table->float('nilai')->nullable();
+            $table->integer('jumlah_soal');
+            $table->integer('bobot');
             $table->timestamps();
         });
     }

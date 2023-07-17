@@ -17,7 +17,6 @@ class CreateSubPertanyaansTable extends Migration
             $table->bigIncrements('sub_pertanyaan_id');
             $table->unsignedBigInteger('id_pertanyaan')->nullable();
             $table->longText('nama_sub_pertanyaan');
-            $table->enum('jenis_pilihan', ['satu', 'banyak']);
             $table->timestamps();
 
             $table->foreign('id_pertanyaan')->references('id_pertanyaan')->on('pertanyaans')->onDelete('cascade');

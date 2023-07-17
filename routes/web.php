@@ -4,7 +4,11 @@ use App\Http\Controllers\AkreditasiController;
 use App\Http\Controllers\AktivitasController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\DataKaryawanController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\LayananController;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\SliderController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -23,24 +27,25 @@ use Illuminate\Support\Facades\Route;
 //     return view('layouts.content');
 // });
 //user
-route::get('/', [App\Http\Controllers\MainController::class, 'index'])->name('layouts.index');
-route::get('/profil', [App\Http\Controllers\MainController::class, 'liat_profil'])->name('profil');
-route::get('/form', [App\Http\Controllers\MainController::class, 'form'])->name('form');
-route::get('/aktivitas', [App\Http\Controllers\MainController::class, 'aktivitas'])->name('aktivitas');
-route::get('/tatatertib', [App\Http\Controllers\MainController::class, 'tatatertib'])->name('tatatertib');
-route::get('/sirkuref', [App\Http\Controllers\MainController::class, 'sirkuref'])->name('sirkuref');
-route::get('/baca_admin', [App\Http\Controllers\MainController::class, 'baca_admin'])->name('baca_admin');
-route::get('/peminjaman', [App\Http\Controllers\MainController::class, 'peminjaman'])->name('peminjaman');
-route::get('/layanan_lainnya', [App\Http\Controllers\MainController::class, 'layanan_lainnya'])->name('layanan_lainnya');
-route::get('/postberita/{slug}', [App\Http\Controllers\MainController::class, 'postberita'])->name('postberita');
+route::get('/', [MainController::class, 'index'])->name('layouts.index');
+route::get('/profil', [MainController::class, 'liat_profil'])->name('profil');
+route::get('/form', [MainController::class, 'form'])->name('form');
+route::get('/aktivitas', [MainController::class, 'aktivitas'])->name('aktivitas');
+route::get('/tatatertib', [MainController::class, 'tatatertib'])->name('tatatertib');
+route::get('/sirkuref', [MainController::class, 'sirkuref'])->name('sirkuref');
+route::get('/baca_admin', [MainController::class, 'baca_admin'])->name('baca_admin');
+route::get('/peminjaman', [MainController::class, 'peminjaman'])->name('peminjaman');
+route::get('/layanan_lainnya', [MainController::class, 'layanan_lainnya'])->name('layanan_lainnya');
+route::get('/postberita/{slug}', [MainController::class, 'postberita'])->name('postberita');
+route::get('/informasi', [MainController::class, 'informasi'])->name('informasi');
 
 //aktivitas
-route::get('/aktivitas', [App\Http\Controllers\AktivitasController::class, 'index'])->name('aktivitas');
-route::get('/storeDataPeminjaman', [App\Http\Controllers\AktivitasController::class, 'StoreDataPeminjaman'])->name('StoreDataPeminjaman');
+route::get('/aktivitas', [AktivitasController::class, 'index'])->name('aktivitas');
+route::get('/storeDataPeminjaman', [AktivitasController::class, 'StoreDataPeminjaman'])->name('StoreDataPeminjaman');
 
 //form login
 Auth::routes();
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 //logout
 route::get('/logout', function () {
     \Auth::logout();
@@ -49,17 +54,33 @@ route::get('/logout', function () {
 
 //dashboard
 Route::group(['admin' => 'dashboard', 'middleware' => ['web', 'auth']], function () {
-    route::get('/dashboard', [App\Http\Controllers\MainController::class, 'dashboard']);
-    route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('admin.content');
+    route::get('/dashboard', [MainController::class, 'dashboard']);
+    route::get('/home', [HomeController::class, 'index'])->name('admin.content');
+    Route::get('/user/edit', [HomeController::class, 'edit'])->name('user.edit');
+    Route::put('/user', [HomeController::class, 'update'])->name('user.update');
+
     //karyawan
     Route::get('karyawan/json', [DataKaryawanController::class, 'json'])->name('karyawan.index.json');
     Route::resource("karyawan", DataKaryawanController::class);
+
     //berita
     Route::get('berita/json', [BeritaController::class, 'json'])->name('berita.index.json');
     Route::resource("berita", BeritaController::class);
+
     //Akreditasi
     Route::get('akreditasi/json', [AkreditasiController::class, 'json'])->name('akreditasi.index.json');
+    Route::get('getAkreditasi', [AkreditasiController::class, 'getAkreditasi'])->name('getAkreditasi');
     Route::resource("akreditasi", AkreditasiController::class);
 
+    //Slide
+    Route::get('slider/json', [SliderController::class, 'json'])->name('slider.index.json');
+    Route::resource("slider", SliderController::class);
+
+    //Kategori
+    Route::get('kategori/json', [KategoriController::class, 'json'])->name('kategori.index.json');
+    Route::resource("kategori", KategoriController::class);
+
+    //Layanan
+    Route::get('layanan/json', [LayananController::class, 'json'])->name('layanan.index.json');
+    Route::resource("layanan", LayananController::class);
 });
-Route::post('/akreditas/akreditasiUpdate', [App\Http\Controllers\AkreditasiController::class, 'update'])->name('akre');
