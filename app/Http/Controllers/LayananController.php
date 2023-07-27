@@ -136,7 +136,7 @@ class LayananController extends Controller
 
     public function json(Request $request)
     {
-        $data = Layanan::orderBy('id', 'ASC')->get();
+        $data = Layanan::with('kategori')->orderBy('id', 'ASC')->get();
 
         return DataTables::of($data)
             ->addIndexColumn()
@@ -144,13 +144,16 @@ class LayananController extends Controller
                 return "<img src='/storage/$data->image' />";
             })
 
-            ->editColumn('body', function ($row) {
-                return '<div class="body-content" style="overflow: auto; height: 200px;">' . $row->body . '</div>';
+            ->editColumn('content', function ($data) {
+                return '<div class="body-content" style="overflow: auto; height: 200px;">' . html_entity_decode($data->body) . '</div>';
             })
-            ->addColumn('action', function ($row) {
-                $editRoute = route('layanan.edit', ['layanan' => $row->id]);
-                $destroyRoute = route('layanan.destroy', ['layanan' => $row->id]);
-                $showRoute = route('layanan.show', ['layanan' => $row->id]);
+            ->editColumn('kategori', function ($data) {
+                return $data->kategori->nama;
+            })
+            ->addColumn('action', function ($data) {
+                $editRoute = route('layanan.edit', ['layanan' => $data->id]);
+                $destroyRoute = route('layanan.destroy', ['layanan' => $data->id]);
+                $showRoute = route('layanan.show', ['layanan' => $data->id]);
                 return '<div class="buttons">
             <a href="' . $editRoute . '" class="btn btn-primary btn-md"><i class="fa fa-edit"></i></a>
             <a href="' . $showRoute . '" class="btn btn-info mr-2"><i class="fa fa-eye"></i></a>
@@ -161,7 +164,7 @@ class LayananController extends Controller
             </form>
         </div>';
             })
-            ->rawColumns(['image', 'body', 'action'])
+            ->rawColumns(['image', 'kategori', 'content', 'action'])
             ->make(true);
     }
 }

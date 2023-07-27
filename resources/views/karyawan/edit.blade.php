@@ -18,11 +18,11 @@
             <div class="col-md-5">
                 <div class="card-body">
                     <div class="form-group">
-                        <label for="nama"><b>Nama</b></label>
+                        <label for="nama">Nama</label>
                         <input type="text" name="nama" class="form-control @error('nama') is-invalid @enderror" id="nama" value="{{ $edit->nama }}">
                     </div>
                     <div class="form-group">
-                        <label for="posisi"><b>Posisi</b></label>
+                        <label for="posisi">Posisi</label>
                         <input type="text" name="posisi" class="form-control @error('posisi') is-invalid @enderror" id="posisi" value="{{ $edit->posisi }}">
                     </div>
                     <div class="form-group">

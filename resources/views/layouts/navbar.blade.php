@@ -32,7 +32,7 @@
                 <ul>
                 <li><a class="nav-link" href="http://perpustakaan.polindra.ac.id">OPAC</a></li>
                 <li><a class="nav-link" href="https://kubuku.id/download/e-perpustakaan-polindra">KUBUKU</a></li>
-                <li><a class="nav-link" href="http://digilib.polindra.ac.id">DIGIBLI</a></li>
+                <li><a class="nav-link" href="http://digilib.polindra.ac.id">DIGITAL LIBRARY</a></li>
                 <li><a class="nav-link" href="https://sista.polindra.ac.id/">REPOSITORY</a></li>
                 <li><a class="nav-link" href="{{ route('login') }}">LOGIN</a></li>
                 </ul>

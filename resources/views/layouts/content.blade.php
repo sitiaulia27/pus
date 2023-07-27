@@ -1,7 +1,7 @@
 @extends('layouts.index')
 
 @section('title')
-    {{ trans('Home') }}
+    {{ trans('Beranda') }}
 @endsection
 
 @section('content')

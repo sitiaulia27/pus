@@ -43,19 +43,13 @@ route::get('/informasi', [MainController::class, 'informasi'])->name('informasi'
 route::get('/aktivitas', [AktivitasController::class, 'index'])->name('aktivitas');
 route::get('/storeDataPeminjaman', [AktivitasController::class, 'StoreDataPeminjaman'])->name('StoreDataPeminjaman');
 
-//form login
-Auth::routes();
-Route::get('/home', [HomeController::class, 'index'])->name('home');
-//logout
-route::get('/logout', function () {
-    \Auth::logout();
-    return redirect('/home');
-});
+Auth::routes([
+    'register' => false,
+]);
 
 //dashboard
 Route::group(['admin' => 'dashboard', 'middleware' => ['web', 'auth']], function () {
-    route::get('/dashboard', [MainController::class, 'dashboard']);
-    route::get('/home', [HomeController::class, 'index'])->name('admin.content');
+    route::get('/dashboard', [HomeController::class, 'index'])->name('admin.content');
     Route::get('/user/edit', [HomeController::class, 'edit'])->name('user.edit');
     Route::put('/user', [HomeController::class, 'update'])->name('user.update');
 

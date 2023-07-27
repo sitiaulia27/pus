@@ -37,11 +37,6 @@ class MainController extends Controller
         return view('peminjaman', compact('layanan5', 'layanan6'));
     }
 
-    public function dashboard()
-    {
-        return view('admin.index');
-    }
-
     public function tatatertib()
     {
         $id_kategori = 1; // ID kategori yang diinginkan

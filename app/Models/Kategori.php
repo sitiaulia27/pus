@@ -13,4 +13,9 @@ class Kategori extends Model
     protected $fillable = [
         'nama',
     ];
+
+    public function layanan()
+    {
+        return $this->hasMany(Layanan::class, 'id');
+    }
 }

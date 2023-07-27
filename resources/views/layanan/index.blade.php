@@ -5,6 +5,7 @@
 @endsection
 
 
+
 @section('content')
 <section class="section">
 <div class="section-header">
@@ -26,7 +27,7 @@
                                 <th>Judul</th>
                                 <th>Body</th>
                                 <th>Image</th>
-                                <th>Id Kategori</th>
+                                <th>Kategori</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -58,16 +59,16 @@
                             name: 'judul'
                         },
                         {
-                            data: 'body',
-                            name: 'body'
+                            data: 'content',
+                            name: 'content'
                         },
                         {
                             data: 'image',
                             name: 'image'
                         },
                         {
-                            data: 'id_kategori',
-                            name: 'id_kategori'
+                            data: 'kategori',
+                            name: 'kategori'
                         },
                         {
                         data: 'action',

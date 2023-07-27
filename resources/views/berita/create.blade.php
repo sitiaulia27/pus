@@ -27,7 +27,7 @@
                         <div class="form-group">
                             <label for="image" class="form-label">Image</label>
                             <img class="img-preview img-fluid mb-3 col-sm-3">
-                            <input type="file" id="image" name="image" class="form-control @error('image') is-invalid @enderror" value="{{ old('image', '') }}" placeholder="Upload gambar" onchange="previewImage()">
+                            <input type="file" id="image" name="image" class="form-control @error('image') is-invalid @enderror" value="{{ old('image', '') }}" placeholder="Upload image" onchange="previewImage()">
                         @error('image')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror

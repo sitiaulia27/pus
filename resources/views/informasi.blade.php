@@ -34,7 +34,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-2 offset-lg-2">
+
+            <div class="col-lg-2 offset-lg-3 pt-5">
                 <div class="info">
                     <div class="image-link">
                         <a href="https://onesearch.id/">
@@ -53,6 +54,21 @@
                     </a>
                 </div>
             </div>
+
+                <div class="footer-top pt-5">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-6 footer-links">
+                                <h4>Jam Operasional Perpustakaan</h4>
+                                <ul>
+                                    <li><i class="bx bx-chevrons-right"></i> Senin-Jumat 08.00-16.00 WIB</li>
+                                    <li><i class="bx bx-chevrons-right"></i> Jam Istirahat 12.00-13.00 WIB</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
     </div>
 </section><!-- End Contact Section -->
 

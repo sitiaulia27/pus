@@ -53,7 +53,7 @@ class HomeController extends Controller
         $user->email = $validatedData['email'];
 
         if ($request->filled('password')) {
-            $user->password = Hash::make($validatedData['password']);
+            $user->password = Hash::make($request->password);
         }
 
         $user->save();

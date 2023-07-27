@@ -14,14 +14,6 @@
         <div class="section-header">
             <h1>{{ $komponen->nama_komponen }}</h1>
         </div>
-
-
-        <style>
-            ol {
-                list-style-type: decimal;
-            }
-        </style>
-
         <div class="row">
             <div class="col-12">
                 <form action="{{ route('akreditasi.update', $komponen->komponen_id) }}" method="post">

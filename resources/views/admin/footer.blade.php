@@ -1,3 +1,3 @@
 <div class="footer-left">
-    All rights reserved &copy; {{ date('Y') }}
+    Perpustakaan &copy; {{ date('Y') }}
 </div>
