@@ -10,13 +10,11 @@
         <ul>
             <li><a class="nav-link {{ setActive('layouts.index') }}" href="{{ route('layouts.index') }}">Home</a></li>
             <li><a class="nav-link {{ setActive('profil') }}" href="{{ route('profil') }}">Profil</a></li>
-            <!-- <li><a class="nav-link {{ setActive('aktivitas') }}" href="{{ route('aktivitas') }}">Aktivitas</a></li> -->
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Pelayanan
                 </a>
                     <ul>
-                    <!-- <li><a class="nav-link {{ setActive('form') }}" href="{{ route('form') }}">Form Peminjaman Buku</a></li> -->
                     <li><a class="nav-link {{ setActive('tatatertib') }}" href="{{ route('tatatertib') }}">Tata Tertib</a></li>
                     <li><a class="nav-link {{ setActive('sirkuref') }}" href="{{ route('sirkuref') }}">Layanan Sirkulasi & Referensi</a></li>
                     <li><a class="nav-link {{ setActive('baca_admin') }}" href="{{ route('baca_admin') }}">Layanan Baca di Tempat & Administrasi</a></li>

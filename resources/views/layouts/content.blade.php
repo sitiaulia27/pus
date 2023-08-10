@@ -17,7 +17,7 @@
                 @if ($slider->image)
                     <img src="{{ asset('storage/' . $slider->image) }}" class="d-block w-100" alt="{{ $slider->title }}">
                 @else
-                    <img src="{{ asset('img/placeholder.jpg') }}" class="d-block w-100" alt="Placeholder Image">
+                    <img src="{{ asset('img/ruang_referensi1.jpeg') }}" class="d-block w-100" alt="Placeholder Image">
                 @endif
                 <div class="container">
                     <div class="carousel-caption text-{{ $key % 2 == 0 ? 'start' : 'end' }}">

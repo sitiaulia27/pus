@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\AkreditasiController;
-use App\Http\Controllers\AktivitasController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\DataKaryawanController;
 use App\Http\Controllers\HomeController;
@@ -30,7 +29,6 @@ use Illuminate\Support\Facades\Route;
 route::get('/', [MainController::class, 'index'])->name('layouts.index');
 route::get('/profil', [MainController::class, 'liat_profil'])->name('profil');
 route::get('/form', [MainController::class, 'form'])->name('form');
-route::get('/aktivitas', [MainController::class, 'aktivitas'])->name('aktivitas');
 route::get('/tatatertib', [MainController::class, 'tatatertib'])->name('tatatertib');
 route::get('/sirkuref', [MainController::class, 'sirkuref'])->name('sirkuref');
 route::get('/baca_admin', [MainController::class, 'baca_admin'])->name('baca_admin');
@@ -38,10 +36,6 @@ route::get('/peminjaman', [MainController::class, 'peminjaman'])->name('peminjam
 route::get('/layanan_lainnya', [MainController::class, 'layanan_lainnya'])->name('layanan_lainnya');
 route::get('/postberita/{slug}', [MainController::class, 'postberita'])->name('postberita');
 route::get('/informasi', [MainController::class, 'informasi'])->name('informasi');
-
-//aktivitas
-route::get('/aktivitas', [AktivitasController::class, 'index'])->name('aktivitas');
-route::get('/storeDataPeminjaman', [AktivitasController::class, 'StoreDataPeminjaman'])->name('StoreDataPeminjaman');
 
 Auth::routes([
     'register' => false,

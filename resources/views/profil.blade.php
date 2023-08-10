@@ -48,7 +48,7 @@
     <div class="container">
         <div class="row">
             <div class="section-title">
-                <h2>TIM</h2>
+                <h2>TIM PERPUSTAKAAN</h2>
             </div>
         </div>
         <div class="row justify-content-center">

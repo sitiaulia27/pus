@@ -30,7 +30,7 @@
                                         <td>Hasil Akhir</td>
                                         <td></td>
                                         <td>{{ $result }}</td>
-                                        <td><a href="{{ route('getAkreditasi') }}" target="blank" class="btn btn-primary">Cetak PDF</a></td>
+                                        <td><a href="{{ route('getAkreditasi') }}" target="blank" class="btn btn-primary">Simpan PDF</a></td>
                                     </tr>
 
                                 </tfoot>

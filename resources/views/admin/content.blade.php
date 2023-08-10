@@ -19,9 +19,11 @@
                     </div>
                     <div class="card-wrap">
                         <div class="card-header">
-                            <h4><p>Data Karyawan</p></h4>
+                            <h4>Data Karyawan</h4>
                         </div>
-                        <div class="card-body">{{ $count_data_karyawan }}</div>
+                        <a class="nav-link {{ setActive('karyawan.index') }}" href="{{ route('karyawan.index') }}">
+                            <div class="card-body">{{ $count_data_karyawan }}</div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -34,7 +36,9 @@
                         <div class="card-header">
                             <h4>Berita</h4>
                         </div>
+                        <a class="nav-link {{ setActive('berita.index') }}" href="{{ route('berita.index') }}">
                         <div class="card-body">{{ $count_berita }}</div>
+                        </a>
                     </div>
                 </div>
             </div>

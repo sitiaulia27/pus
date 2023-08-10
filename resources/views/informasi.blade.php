@@ -35,6 +35,7 @@
                 </div>
             </div>
 
+
             <div class="col-lg-2 offset-lg-3 pt-5">
                 <div class="info">
                     <div class="image-link">
@@ -55,20 +56,25 @@
                 </div>
             </div>
 
-                <div class="footer-top pt-5">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-3 col-md-6 footer-links">
-                                <h4>Jam Operasional Perpustakaan</h4>
+            <div class="footer-top pt-5">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6 footer-links">
+                            <h4>Jam Operasional Perpustakaan</h4>
                                 <ul>
-                                    <li><i class="bx bx-chevrons-right"></i> Senin-Jumat 08.00-16.00 WIB</li>
-                                    <li><i class="bx bx-chevrons-right"></i> Jam Istirahat 12.00-13.00 WIB</li>
+                                    <li><i class="bx bx-chevrons-right"></i> Senin-Jumat 07.30-16.00 WIB</li>
                                 </ul>
-                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 footer-links">
+                            <h4>Sosial Media</h4>
+                            <ul>
+                            <a href="https://instagram.com/perpustakaanpolindra?igshid=Y2IzZGU1MTFhOQ=="><i class="bx bxl-instagram" style="color: #E4405F;"></i></a>
+                            <a href="https://www.youtube.com"><i class="bx bxl-youtube" style="color: #FF0000;"></i></a>
+                            </ul>
                         </div>
                     </div>
                 </div>
-
+            </div>
     </div>
 </section><!-- End Contact Section -->
 

@@ -22,7 +22,7 @@
                                 <div class="icon">
                                     <img src="{{ asset('storage/' . $lay->image) }}" style="width: 90px; height: 90px;">
                                 </div>
-                                <h4 class="title"><a href="{{ route('layanan.show', $lay->id) }}">{{$lay->judul}}</a></h4>
+                                <h4 class="title">{{$lay->judul}}</a></h4>
                                 <div class="description text-justify">
                                     <p>{!! $lay->body !!}</p>
                                 </div>
