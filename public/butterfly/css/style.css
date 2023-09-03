@@ -73,8 +73,6 @@ h6 {
   object-fit: cover;
         
 }
-
-
 /*--------------------------------------------------------------
 # timeline
 --------------------------------------------------------------*/
@@ -404,6 +402,27 @@ h6 {
 .navbar-mobile .dropdown>.dropdown-active {
   display: block;
 }
+
+.teks {
+  font-size: 35px; /* Ukuran font dasar */
+  color: #fff;
+  font-style: initial;
+}
+
+/* Media Query untuk layar berukuran kecil (misalnya, perangkat mobile) */
+@media (max-width: 768px) {
+  .teks {
+      font-size: 29px; /* Ukuran font saat layar berukuran kecil */
+  }
+}
+
+/* Media Query untuk layar berukuran sangat kecil (misalnya, perangkat mobile portrait) */
+@media (max-width: 576px) {
+  .teks {
+      font-size: 25px; /* Ukuran font saat layar sangat kecil */
+  }
+}
+
 
 /*--------------------------------------------------------------
 # Hero Section
@@ -1493,9 +1512,9 @@ section {
 --------------------------------------------------------------*/
 #footer {
   background: #fafafa;
-  padding: 0 0 20px 0;
+  padding: 0 0 0px 0;
   color: #444444;
-  font-size: 14px;
+  font-size: 15px;
   background: #0000CD;
   
 }
@@ -1648,11 +1667,12 @@ section {
 #footer .copyright {
   float: left;
   color: #ffffff;
+  font-size: 15px;
 }
 
 #footer .credits {
   float: right;
-  font-size: 13px;
+  font-size: 10px;
   color: #0f394c;
 }
 
@@ -1697,3 +1717,14 @@ section {
   margin-right: 5px;
 }
 
+.footer-content {
+  display: flex;
+  justify-content: space-between; /* Mengatur ruang antara copyright dan ikon media sosial */
+  align-items: center; /* Mengatur vertikal center footer */
+}
+
+.npp {
+  text-decoration: none;
+  color: #ffffff; /* Warna ikon media sosial */
+  font-size: 15px;
+}

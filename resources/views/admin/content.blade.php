@@ -19,7 +19,7 @@
                     </div>
                     <div class="card-wrap">
                         <div class="card-header">
-                            <h4>Data Karyawan</h4>
+                            <h4>Tim Perpustakaan</h4>
                         </div>
                         <a class="nav-link {{ setActive('karyawan.index') }}" href="{{ route('karyawan.index') }}">
                             <div class="card-body">{{ $count_data_karyawan }}</div>

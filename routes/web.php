@@ -37,6 +37,11 @@ route::get('/layanan_lainnya', [MainController::class, 'layanan_lainnya'])->name
 route::get('/postberita/{slug}', [MainController::class, 'postberita'])->name('postberita');
 route::get('/informasi', [MainController::class, 'informasi'])->name('informasi');
 
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+route::get('/logout', function () {
+    Auth::logout();
+    return redirect('/home');
+});
 Auth::routes([
     'register' => false,
 ]);

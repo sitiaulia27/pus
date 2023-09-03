@@ -9,7 +9,7 @@
 
 <section class="section">
         <div class="section-header">
-            <h1>Edit Slide</h1>
+            <h1>Edit Slider</h1>
         </div>
         <div class="card">
             <form action="{{ route('slider.update', $edit->id) }}" method="POST" enctype="multipart/form-data">

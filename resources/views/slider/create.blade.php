@@ -9,7 +9,7 @@
 
 <section class="section">
         <div class="section-header">
-            <h1>Tambah Slide</h1>
+            <h1>Tambah Slider</h1>
         </div>
         <div class="card">
             <div class="col-md-7">

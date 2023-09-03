@@ -51,7 +51,7 @@ class DataKaryawanController extends Controller
         }
 
         Data_Karyawan::create($validatedData);
-        notify()->success('Data Karyawan Berhasil Ditambahkan');
+        notify()->success('Data Tim Perpustakaan Berhasil Ditambahkan');
         return redirect()->route('karyawan.index');
     }
 
@@ -104,7 +104,7 @@ class DataKaryawanController extends Controller
 
         Data_Karyawan::where('id', $id)->update($validatedData);
 
-        notify()->success('Data Karyawan Berhasil Diubah');
+        notify()->success('Data Tim Perpustakaan Berhasil Diubah');
         return redirect()->route('karyawan.index');
     }
 
@@ -117,7 +117,7 @@ class DataKaryawanController extends Controller
     public function destroy($id)
     {
         Data_Karyawan::where("id", $id)->delete();
-        notify()->success('Berhasil Menghapus Data Karyawan');
+        notify()->success('Berhasil Menghapus Data Tim Perpustakaan');
         return back();
     }
 

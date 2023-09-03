@@ -3,7 +3,7 @@
     <div class="container d-flex align-items-center justify-content-between">
 
     <a class="logo"><img src="{{ asset('img/polindra.png')}}" alt="" class="img-fluid"></a>
-    <h5 class="logo">UPT PERPUSTAKAAN POLINDRA</h5>
+    <div class="teks">UPT PERPUSTAKAAN POLINDRA</div>
 
 
     <nav id="navbar" class="navbar" class="menu-back cbp-af-header">

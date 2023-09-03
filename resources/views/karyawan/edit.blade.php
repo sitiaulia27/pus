@@ -9,7 +9,7 @@
 
 <section class="section">
         <div class="section-header">
-            <h1>Edit Data Karyawan</h1>
+            <h1>Edit Tim Perpustakaan</h1>
         </div>
         <div class="card">
             <form action="{{ route('karyawan.update', $edit->id) }}" method="POST" enctype="multipart/form-data">

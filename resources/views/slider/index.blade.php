@@ -8,7 +8,7 @@
 @section('content')
 <section class="section">
 <div class="section-header">
-            <h1>Slide</h1>
+            <h1>Slider</h1>
         </div>
         <x:notify-messages />
 <div class="row">
